@@ -1,0 +1,1576 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="BUILD X: electronics and robotics project guides, code, tools and materials.">
+<meta property="og:title" content="BUILD X">
+<meta property="og:description" content="Build electronics and robotics projects. Get the full code, try them in the simulator, and order the parts.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/png;base64,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">
+<style>body{margin:0}</style>
+<title>BUILD X</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+/* Layout: sticky header, then one view at a time. Home opens on a spec-sheet card (project, parts, price) beside the thesis. */
+:root{
+  --bg:#0a0f15; --surface:#111822; --surface2:#17202c; --line:#243041;
+  --fg:#e8eef6; --muted:#93a1b3;
+  --accent:#f2a33a; --accent-ink:#1a1204;
+  --signal:#62c7ff; --trace:#1d3547; --ok:#4cc38a; --err:#ff7b80;
+  --logo-blue:#0260fd; --lg-mark:url("data:image/webp;base64,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"); --lg-full:url("data:image/webp;base64,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");
+  --display:'Space Grotesk',system-ui,sans-serif;
+  --body:'Inter',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f4f6f9; --surface:#ffffff; --surface2:#edf1f6; --line:#d3dce7;
+    --fg:#0f1722; --muted:#566478;
+    --accent:#b25a06; --accent-ink:#ffffff;
+    --signal:#0a64a0; --trace:#c9d6e2; --ok:#12805a; --err:#b3261e;
+    color-scheme:light;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#f4f6f9; --surface:#ffffff; --surface2:#edf1f6; --line:#d3dce7;
+  --fg:#0f1722; --muted:#566478;
+  --accent:#b25a06; --accent-ink:#ffffff;
+  --signal:#0a64a0; --trace:#c9d6e2; --ok:#12805a; --err:#b3261e;
+  color-scheme:light;
+}
+[hidden]{display:none!important}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.15;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(2rem,5.2vw,3.4rem)}
+h2{font-size:clamp(1.4rem,3vw,1.9rem)}
+h3{font-size:1.05rem}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.pg{padding-block:40px 64px;display:flex;flex-direction:column;gap:32px}
+.mono{font-family:var(--mono)}
+.muted{color:var(--muted)}
+.eyebrow{font:500 .72rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:8px 24px;flex-wrap:wrap;padding-block:12px}
+.logo{display:flex;align-items:center;gap:10px;font:700 1.2rem var(--display);letter-spacing:.02em}
+.logo svg{width:28px;height:28px}
+.logo .mk{stroke:var(--accent);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.logo .bx{stroke:var(--line);fill:var(--surface);stroke-width:1.5}
+nav{display:flex;gap:4px;margin-left:8px;min-width:0}
+nav a{padding:8px 12px;border-radius:8px;color:var(--muted);font-weight:500;white-space:nowrap}
+nav a:hover{color:var(--fg);background:var(--surface)}
+nav a[aria-current="page"]{color:var(--fg);background:var(--surface2)}
+.cartbtn{display:flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);font-weight:500}
+.cartbtn b{min-width:22px;height:22px;border-radius:11px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font:600 .75rem var(--mono);padding:0 6px}
+@media (max-width:760px){
+  nav{order:3;width:100%;margin-left:0;overflow-x:auto;padding-bottom:2px}
+}
+
+/* buttons, chips, inputs */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 18px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);font:600 .92rem var(--body);cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--muted);filter:none}
+.btn.sm{padding:7px 12px;font-size:.84rem}
+.btn.block{width:100%}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);font:500 .85rem var(--body);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+input,select,textarea{width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--fg);font:inherit;min-width:0}
+input::placeholder,textarea::placeholder{color:var(--muted)}
+label.f{display:flex;flex-direction:column;gap:6px;font-weight:500;font-size:.88rem}
+.row2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px}
+.form{display:flex;flex-direction:column;gap:14px}
+.note{padding:12px 14px;border-radius:8px;background:var(--surface2);border:1px solid var(--line);color:var(--muted);font-size:.88rem}
+.note b{color:var(--fg)}
+
+/* trace art */
+.art{position:relative;aspect-ratio:16/9;background:var(--surface2);overflow:hidden;border-bottom:1px solid var(--line)}
+.art svg{position:absolute;inset:0;width:100%;height:100%}
+.tr path{fill:none;stroke:var(--trace);stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round}
+.pd circle{fill:var(--accent);opacity:.9}
+.tag{position:absolute;left:12px;top:12px;padding:4px 9px;border-radius:6px;background:var(--bg);border:1px solid var(--line);font:500 .7rem var(--mono);letter-spacing:.06em;text-transform:uppercase}
+
+.cmp{filter:drop-shadow(0 4px 6px rgba(0,0,0,.35))}
+.nmx{display:flex;align-items:center;gap:10px;min-width:0}
+.th{display:block;width:46px;height:32px;flex:none;border-radius:6px;background:var(--surface2);overflow:hidden}
+.th svg{width:100%;height:100%;display:block}
+
+/* hero */
+.hero{padding-block:48px 24px}
+.hero .grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:40px;align-items:center}
+@media (max-width:900px){.hero .grid{grid-template-columns:minmax(0,1fr)}}
+.hero h1{margin:14px 0 18px}
+.hero p.lead{font-size:1.08rem;color:var(--muted);max-width:52ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.sheet{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.sheet .art{aspect-ratio:21/8}
+.sheet .in{padding:18px 20px;display:flex;flex-direction:column;gap:14px}
+.sheet h3{font-size:1.25rem}
+.kv{display:flex;flex-wrap:wrap;gap:6px 16px;font:500 .78rem var(--mono);color:var(--muted)}
+.bom{display:flex;flex-direction:column}
+.bom .r{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:12px;padding:8px 0;border-top:1px dashed var(--line);font-size:.9rem;align-items:baseline}
+.bom .r .q{font-family:var(--mono);color:var(--muted);font-size:.8rem}
+.bom .r .p{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.bom .tot{font-weight:600;border-top:1px solid var(--muted)}
+
+/* sections */
+.band{border-top:1px solid var(--line)}
+.sec{padding-block:48px;display:flex;flex-direction:column;gap:24px}
+.sec-h{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap}
+.sec-h p{color:var(--muted);max-width:56ch;margin-top:8px}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}
+.step{padding:20px;border:1px solid var(--line);border-radius:12px;background:var(--surface);display:flex;flex-direction:column;gap:10px}
+.step p{color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:18px}
+.pcard,.item,.sw{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.pcard:hover{border-color:var(--muted)}
+.pbody,.ibody{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.pbody p,.ibody p{color:var(--muted);font-size:.9rem}
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:auto;padding-top:6px;font:500 .74rem var(--mono);color:var(--muted)}
+.cat{font:500 .68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--signal)}
+.buy{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:8px}
+.price{font:600 1.05rem var(--mono);font-variant-numeric:tabular-nums}
+.item .art{aspect-ratio:2/1}
+.tools{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+.tools .search{max-width:300px}
+.empty{padding:40px 20px;text-align:center;border:1px dashed var(--line);border-radius:12px;color:var(--muted);display:flex;flex-direction:column;gap:14px;align-items:center}
+
+/* project page */
+.crumb{font:500 .8rem var(--mono);color:var(--muted)}
+.crumb a:hover{color:var(--fg)}
+.ph{display:flex;flex-direction:column;gap:14px}
+.ph p{color:var(--muted);max-width:62ch;font-size:1.05rem}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:32px;align-items:start}
+@media (max-width:900px){.cols{grid-template-columns:minmax(0,1fr)}}
+.main{display:flex;flex-direction:column;gap:32px;min-width:0}
+ol.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:34px minmax(0,1fr);gap:14px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+ol.steps li::before{content:counter(s);width:34px;height:34px;border-radius:8px;background:var(--surface2);border:1px solid var(--line);display:grid;place-items:center;font:600 .9rem var(--mono);color:var(--accent)}
+ol.steps h3{margin-bottom:4px}
+ol.steps p{color:var(--muted)}
+.code{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.code .hd{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--surface2);flex-wrap:wrap}
+.code .hd span{font:500 .8rem var(--mono);color:var(--muted)}
+.code pre{margin:0;padding:16px;overflow-x:auto;font:400 .84rem/1.6 var(--mono);color:var(--fg);tab-size:2}
+.files{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.files .r{display:flex;justify-content:space-between;gap:12px;padding:10px 14px;border-top:1px solid var(--line);font:500 .84rem var(--mono);flex-wrap:wrap}
+.files .r:first-child{border-top:0}
+.side{position:sticky;top:calc(env(safe-area-inset-top,0px) + 120px);border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:18px;display:flex;flex-direction:column;gap:14px}
+@media (max-width:900px){.side{position:static}}
+.kit{padding:14px;border-radius:10px;background:var(--surface2);border:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+
+/* software */
+.sw{padding:20px;gap:12px}
+.sw .top2{display:flex;justify-content:space-between;gap:10px;align-items:start}
+.sw p{color:var(--muted);font-size:.92rem}
+.pill{padding:3px 9px;border-radius:999px;border:1px solid var(--line);font:500 .7rem var(--mono);color:var(--muted);white-space:nowrap}
+
+/* cart */
+.cartgrid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:28px;align-items:start}
+@media (max-width:900px){.cartgrid{grid-template-columns:minmax(0,1fr)}}
+.lines{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.line{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:14px;align-items:center;padding:14px 16px;border-top:1px solid var(--line)}
+.line:first-child{border-top:0}
+.line .nm{display:flex;flex-direction:column;min-width:0}
+.line .nm small{color:var(--muted);font:500 .74rem var(--mono)}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.qty button{width:32px;height:32px;border:0;background:var(--surface2);color:var(--fg);font:600 1rem var(--mono);cursor:pointer}
+.qty span{min-width:32px;text-align:center;font:500 .9rem var(--mono)}
+.rm{border:0;background:none;color:var(--muted);cursor:pointer;font-size:.8rem;text-decoration:underline;padding:0}
+@media (max-width:520px){.line{grid-template-columns:minmax(0,1fr) auto}.line .lp{grid-column:1 / -1;justify-self:end}}
+.box{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:18px;display:flex;flex-direction:column;gap:14px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:8px;cursor:pointer}
+.opt input{width:auto;margin-top:4px}
+.opt span{display:flex;flex-direction:column;flex:1;font-weight:500}
+.opt small{color:var(--muted);font-weight:400}
+.opt:has(input:checked){border-color:var(--accent)}
+dl.tot{margin:0;display:flex;flex-direction:column;gap:6px}
+dl.tot div{display:flex;justify-content:space-between;gap:12px}
+dl.tot dt{color:var(--muted)}
+dl.tot dd{margin:0;font-family:var(--mono);font-variant-numeric:tabular-nums}
+dl.tot .grand{border-top:1px solid var(--line);padding-top:10px;font-weight:700;font-size:1.1rem}
+dl.tot .grand dt{color:var(--fg)}
+
+/* support + shipping */
+details{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:0}
+summary{cursor:pointer;padding:14px 16px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";font:500 1.1rem var(--mono);color:var(--accent)}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 16px 16px;color:var(--muted)}
+.faq{display:flex;flex-direction:column;gap:10px}
+.twoc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px;align-items:start}
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.tl li{display:flex;gap:12px;align-items:center;font-size:.92rem}
+.tl i{width:12px;height:12px;border-radius:50%;border:2px solid var(--line);flex:none}
+.tl li.done i{background:var(--ok);border-color:var(--ok)}
+.tl li.now i{border-color:var(--accent);background:var(--accent)}
+.tl li.todo{color:var(--muted)}
+.tblw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:.92rem}
+th,td{padding:12px 14px;text-align:left;border-top:1px solid var(--line);vertical-align:top}
+tr:first-child th,tr:first-child td{border-top:0}
+th{font:500 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--surface2)}
+td.n{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* footer + toast */
+footer{border-top:1px solid var(--line);background:var(--surface)}
+.fgrid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(auto-fit,minmax(130px,1fr));gap:28px;padding-block:36px}
+@media (max-width:700px){.fgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.fgrid>:first-child{grid-column:1 / -1}}
+.fgrid h3{font:500 .72rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.fgrid a{display:block;padding:3px 0;color:var(--fg)}
+.fgrid a:hover{color:var(--accent)}
+.fine{padding-block:16px 28px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 20px);z-index:60;max-width:min(92vw,460px);padding:12px 18px;border-radius:10px;background:var(--fg);color:var(--bg);font-weight:500;box-shadow:0 8px 30px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s}
+#toast.on{opacity:1}
+@media (prefers-reduced-motion:reduce){#toast{transition:none}}
+
+/* header extras */
+.hr{margin-left:auto;display:flex;align-items:center;gap:8px}
+.cur{padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--fg);font:600 .8rem var(--mono);cursor:pointer}
+.cur:hover{border-color:var(--muted)}
+.admflag{padding:4px 9px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font:600 .7rem var(--mono);letter-spacing:.06em;text-transform:uppercase}
+
+/* cards with admin controls */
+.cw{position:relative;display:flex;min-width:0}
+.cw>.pcard,.cw>.item,.cw>.sw,.cw>details{flex:1;min-width:0}
+.pen{position:absolute;top:10px;right:10px;z-index:3;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--fg);display:grid;place-items:center;cursor:pointer;padding:0}
+.pen:hover{border-color:var(--accent);color:var(--accent)}
+.pen.inl{position:static;flex:none}
+.ce .pen{right:48px;top:8px}
+.plus{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px dashed var(--accent);background:transparent;color:var(--accent);font:600 .88rem var(--body);cursor:pointer}
+.plus b{font-size:1.2rem;line-height:1}
+.plus:hover{background:var(--surface)}
+.trow{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.hrow{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.sect{display:flex;flex-direction:column;gap:14px}
+.err{color:var(--err);font-size:.88rem;min-height:1.2em;margin:0}
+.btn.danger{color:var(--err);border-color:var(--err)}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+
+/* founder */
+.avatar{position:relative;width:180px;height:180px;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--surface2);flex:none;display:grid;place-items:center}
+.avatar svg{position:absolute;inset:0;width:100%;height:100%}
+.avatar b{position:relative;font:700 3rem var(--display);color:var(--accent)}
+.avatar.sm{width:96px;height:96px;border-radius:12px}
+.avatar.sm b{font-size:1.8rem}
+.fhead{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.bio{display:flex;flex-direction:column;gap:14px;max-width:68ch;font-size:1.05rem}
+.fband{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+
+/* code library */
+.clist{display:flex;flex-direction:column;gap:12px}
+.ct{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ct small{font-size:.74rem;font-weight:500}
+.cbody{padding:0 16px 16px;display:flex;flex-direction:column;gap:12px}
+.cbody p{padding:0}
+.libs{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ce summary{padding-right:96px}
+
+/* video links */
+.vlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:12px}
+.vid{display:flex;align-items:center;gap:14px;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.vid:hover{border-color:var(--accent)}
+.vid small{display:block}
+.play{width:44px;height:44px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;flex:none}
+
+/* simulator */
+.simgrid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:900px){.simgrid{grid-template-columns:minmax(0,1fr)}}
+.simgrid>.box{gap:14px}
+.simcv canvas{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:12px;background:#e9edf2}
+.readout{white-space:pre;font-size:.82rem;color:var(--muted);overflow-x:auto}
+.serial{margin:0;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);min-height:7.5em;font-size:.8rem;overflow-x:auto;color:var(--fg)}
+.gauge,.progress{height:14px;border-radius:7px;background:var(--surface2);border:1px solid var(--line);overflow:hidden}
+.gauge i,.progress i{display:block;height:100%;width:0;background:var(--signal)}
+.lamps{display:flex;gap:24px;flex-wrap:wrap}
+.lamp{display:flex;align-items:center;gap:10px}
+.lamp i{width:18px;height:18px;border-radius:50%;background:var(--surface2);border:2px solid var(--line);display:block}
+.lamp i.on{background:var(--accent);border-color:var(--accent);box-shadow:0 0 12px var(--accent)}
+.room{position:relative;min-height:300px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;overflow:hidden}
+.bulb{width:70px;height:70px;border-radius:50%;background:#ffd27a}
+.room .rd{position:absolute;left:14px;bottom:10px;color:#cfd8e3}
+.owngrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:900px){.owngrid{grid-template-columns:minmax(0,1fr)}}
+.ogrp{display:flex;flex-direction:column;gap:8px;padding-top:6px}
+.orow{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.oq{width:72px}
+
+/* gate and editor */
+.overlay{position:fixed;inset:0;z-index:50;background:rgba(5,8,12,.8);overflow-y:auto;display:flex;align-items:flex-start;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.gbox,.mbox{width:100%;max-width:520px;margin:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.mbox{max-width:700px;margin:24px auto}
+.mh{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.mact{display:flex;flex-wrap:wrap;gap:10px}
+textarea.mono{font-family:var(--mono);font-size:.84rem}
+
+/* video and translate widget */
+.vwrap{aspect-ratio:16/9;max-width:760px;width:100%;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#000}
+.vwrap iframe,.vwrap video{width:100%;height:100%;border:0;display:block}
+body{top:0!important}
+.goog-te-banner-frame,.skiptranslate>iframe,#goog-gt-tt,.goog-te-balloon-frame{display:none!important}
+.goog-text-highlight{background:none!important;box-shadow:none!important}
+
+/* logo */
+.lgm{width:56px;height:40px;border-radius:10px;background:#000 var(--lg-mark) center/cover no-repeat;flex:none}
+.wm{font:700 1.05rem var(--display);letter-spacing:.14em}
+.wm b{font-weight:700;color:var(--fg)}
+.wm i{font-style:normal;color:var(--logo-blue)}
+.lgfull{width:100%;aspect-ratio:672/294;border-radius:12px;background:#000 var(--lg-full) center/cover no-repeat}
+.lgm{background:#000 url("assets/favicon.png") center/cover no-repeat}
+.lgfull{background:#000 url("assets/build-x-logo.png") center/contain no-repeat;aspect-ratio:3/2}
+.wm{letter-spacing:.08em}.wm i{color:#ff9d16;font-style:normal}
+.gbox .lgfull{margin-bottom:6px}
+@media (max-width:420px){
+  .bar{gap:8px 10px}
+  .lgm{width:44px;height:31px;border-radius:8px}
+  .logo{gap:8px}
+  .wm{font-size:.8rem;letter-spacing:.08em}
+  .cur{padding:6px 8px}
+  .cartbtn{padding:6px 10px;gap:6px}
+}
+</style>
+
+<link rel="icon" type="image/png" href="assets/favicon.png"><meta name="application-name" content="BUILD X">
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="logo notranslate" translate="no" href="#home" aria-label="BUILD X home"><span class="lgm" role="img" aria-label="BUILD X logo"></span><span class="wm" aria-hidden="true">BUILD <i>X</i></span></a>
+    <nav id="nav" aria-label="Main">
+      <a href="#founder" data-k="founder">Founder</a>
+      <a href="#cofounder" data-k="cofounder">Co-Founder</a>
+      <a href="#projects" data-k="projects">Projects</a>
+      <a href="#code" data-k="code">Code</a>
+      <a href="#simulate" data-k="simulate">Simulate</a>
+      <a href="#shop" data-k="shop">Shop</a>
+      <a href="#software" data-k="software">Software</a>
+      <a href="#shipping" data-k="shipping">Shipping</a>
+      <a href="#admin" data-k="admin">Admin</a>
+    </nav>
+    <div class="hr">
+      <span class="admflag" id="admflag" hidden>Admin</span>
+      <button type="button" class="cur" id="curbtn" data-act="cur" aria-label="Change country, currency and language">USD</button>
+      <a class="cartbtn" href="#cart" data-k="cart">Cart <b id="count">0</b></a>
+    </div>
+  </div>
+</header>
+
+<main id="view"></main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="lgfull" role="img" aria-label="BUILD X" style="margin-bottom:12px;max-width:220px"></div>
+        <p class="muted" style="max-width:36ch">Build guides, full source code, tools and the parts to make them, in one place.</p>
+      </div>
+      <div><h3>Build</h3><a href="#projects">All projects</a><a href="#code">Code library</a><a href="#simulate">Simulate</a><a href="#software">Software</a></div>
+      <div><h3>Buy</h3><a href="#shop">Materials</a><a href="#cart">Cart</a><a href="#shipping">Shipping</a></div>
+      <div><h3>About</h3><a href="#founder">Founder</a><a href="#shipping">Shipping and returns</a><a href="#admin">Admin</a></div>
+    </div>
+    <div class="fine">BUILD X prototype. Prices, stock, shipping terms and contact details are sample values to be replaced.</div>
+  </div>
+</footer>
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="google_translate_element" hidden></div>
+<div id="gate" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="g-title">
+  <form class="gbox" id="gateform" novalidate>
+    <div class="lgfull" role="img" aria-label="BUILD X" style="max-width:200px"></div>
+    <span class="eyebrow">Welcome to BUILD X</span>
+    <h2 id="g-title">Where are you shopping from?</h2>
+    <p class="muted">Choose your country and language. We show prices in your local currency and translate the site for you.</p>
+    <label class="f" for="g-country">Country<select id="g-country" required></select></label>
+    <label class="f" for="g-lang">Language<select id="g-lang"></select></label>
+    <label class="f" for="g-email">Email<input id="g-email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+    <p class="muted" style="font-size:.84rem">By continuing you agree to receive a welcome email from BUILD X. We also use your email to reply to questions about builds and orders.</p>
+    <p class="err" id="g-err" role="alert"></p>
+    <button class="btn block" type="button" data-submit="gateform">Continue</button>
+    <button class="btn ghost block" type="button" id="g-cancel" data-act="gcancel" hidden>Cancel</button>
+  </form>
+</div>
+<div id="modal" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="m-title">
+  <form class="mbox" id="mform" novalidate>
+    <div class="mh"><h2 id="m-title"></h2><button type="button" class="btn ghost sm" data-mclose>Close</button></div>
+    <div id="m-fields" class="form"></div>
+    <div class="mact"><button class="btn" type="button" data-submit="mform">Save</button><button type="button" class="btn ghost" data-mclose>Cancel</button><button type="button" class="btn ghost danger" id="m-del" data-act="mdel" hidden>Delete</button></div>
+  </form>
+</div>
+
+<script>
+(function(){
+"use strict";
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var esc=function(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")};
+
+
+/* ---------- data ---------- */
+var PRODUCTS=[
+ ["esp32","ESP32-S3 DevKit","Boards",9.80,"Dual-core, Wi-Fi and Bluetooth LE, 3.3 V logic"],
+ ["uno","Arduino Uno R3 (compatible)","Boards",12.50,"ATmega328P, 5 V logic, USB-C"],
+ ["pico","Raspberry Pi Pico W","Boards",7.50,"RP2040 with Wi-Fi, MicroPython ready"],
+ ["zero2w","Raspberry Pi Zero 2 W","Boards",18.00,"Quad-core Arm, 512 MB RAM, Wi-Fi"],
+ ["soil","Capacitive soil moisture sensor","Sensors",3.20,"Corrosion-resistant, analog output"],
+ ["bme280","BME280 environment sensor","Sensors",6.90,"Temperature, humidity, pressure over I2C"],
+ ["hcsr04","HC-SR04 ultrasonic sensor","Sensors",2.40,"2 cm to 400 cm range"],
+ ["irarray","5-channel IR line sensor","Sensors",4.80,"Five analog outputs, 5 V"],
+ ["mpu6050","MPU-6050 motion sensor","Sensors",4.20,"3-axis gyro and 3-axis accelerometer, I2C"],
+ ["pir","HC-SR501 PIR motion sensor","Sensors",3.40,"Adjustable delay, up to 7 m"],
+ ["cam","5 MP camera module","Sensors",14.00,"Ribbon cable for Pi Zero included"],
+ ["oled","0.96 in OLED display","Sensors",5.20,"128x64, I2C, white"],
+ ["l298n","L298N dual motor driver","Motors & Drivers",5.60,"2 A per channel, 5 to 35 V"],
+ ["ttmotor","TT gear motor and wheel (pair)","Motors & Drivers",7.90,"3 to 6 V, 1:48 gearing"],
+ ["sg90","SG90 micro servo (4-pack)","Motors & Drivers",9.90,"180 degrees, 1.8 kg/cm"],
+ ["mg996","MG996R metal-gear servo","Motors & Drivers",8.50,"Metal gears, 10 kg/cm"],
+ ["pump","Mini water pump","Motors & Drivers",3.60,"3 to 6 V submersible, silicone tube"],
+ ["bat2s","2S 18650 battery holder","Power",4.50,"Switch, 7.4 V output. Cells not included"],
+ ["buck","Buck converter 5 V / 3 A","Power",3.90,"7 to 24 V input, screw terminals"],
+ ["breadboard","Breadboard and jumper wires","Tools & Prototyping",8.90,"830 tie points, 65 jumper wires"],
+ ["iron","Soldering iron kit, 60 W","Tools & Prototyping",24.00,"Adjustable temperature, stand, solder, tips"],
+ ["chassis","2WD robot chassis","Tools & Prototyping",14.90,"Acrylic plates, fasteners included"],
+ ["kit-plant","Plant Monitor Kit","Kits",28.00,"Every part for the Smart Plant Monitor"],
+ ["kit-line","Line Follower Kit","Kits",46.00,"Every part for the Line-Following Robot"],
+ ["kit-weather","Weather Station Kit","Kits",28.00,"Every part for the WiFi Weather Station"],
+ ["kit-rover","Rover Kit","Kits",36.00,"Every part for the Obstacle-Avoiding Rover"],
+ ["kit-arm","Robot Arm Kit","Kits",52.00,"Every part for the Gesture-Controlled Arm"],
+ ["kit-cam","Motion Camera Kit","Kits",32.00,"Every part for the Pi Zero Motion Camera"],
+ ["hc05","HC-05 Bluetooth module","Components",6.80,"Serial over Bluetooth, 3.3 V logic on RX"],
+ ["ldr","Light sensor module (LDR)","Components",1.90,"Analog output, 3.3 or 5 V"],
+ ["ledpack","LED pack with resistors","Components",3.20,"20 LEDs in five colors, 220 ohm resistors"],
+ ["buzzer","Piezo buzzer","Components",1.20,"3 to 5 V, loud tone from a digital pin"],
+ ["kit-bt","Bluetooth Car Kit","Kits",47.00,"Every part for the Bluetooth RC Car"],
+ ["kit-ruler","Distance Display Kit","Kits",26.00,"Every part for the Desk Distance Display"],
+ ["kit-pantilt","Pan-Tilt Camera Kit","Kits",41.00,"Every part for the Pan-Tilt Camera"],
+ ["kit-nightlight","Night Light Kit","Kits",21.00,"Every part for the Auto Night Light"],
+ ["kit-alarm","Motion Alarm Kit","Kits",26.00,"Every part for the Motion Alarm"],
+ ["kit-balance","Balancing Robot Kit","Kits",45.00,"Every part for the Self-Balancing Robot"]
+].map(function(a){return {id:a[0],name:a[1],cat:a[2],price:a[3],note:a[4]}});
+var X={};PRODUCTS.forEach(function(p){X[p.id]=p});
+var CATS=["All","Kits","Boards","Sensors","Motors & Drivers","Components","Power","Tools & Prototyping"];
+
+var PROJECTS=[
+{id:"plant-monitor",name:"Smart Plant Monitor",type:"Electronics",level:"Beginner",time:"3 h",board:"ESP32-S3",lang:"Arduino C++",file:"plant_monitor.ino",kit:"kit-plant",
+ blurb:"Read soil moisture and switch a small pump on when the pot runs dry.",
+ parts:[["esp32",1],["soil",1],["pump",1],["oled",1],["breadboard",1]],
+ steps:[["Wire the sensor","Connect the moisture sensor to 3.3 V, GND and GPIO 4. Keep the probe out of water until the wiring is checked."],["Add the pump","Drive the pump through a transistor or the motor driver on GPIO 5. Never power it straight from a GPIO pin."],["Calibrate","Read the raw value with the sensor in dry air, then in a glass of water. Put both numbers into DRY and WET in the code."],["Upload and plant","Flash the sketch, place the probe in the soil and watch the percentage in the serial monitor."]],
+ code:"const int SOIL_PIN = 4;\nconst int PUMP_PIN = 5;\nconst int DRY = 2800;   // raw reading in dry air\nconst int WET = 1200;   // raw reading in water\n\nvoid setup() {\n  Serial.begin(115200);\n  pinMode(PUMP_PIN, OUTPUT);\n  analogReadResolution(12);\n}\n\nvoid loop() {\n  int raw = analogRead(SOIL_PIN);\n  int pct = constrain(map(raw, DRY, WET, 0, 100), 0, 100);\n  Serial.printf(\"Moisture: %d%%\\n\", pct);\n\n  if (pct < 30) {\n    digitalWrite(PUMP_PIN, HIGH);\n    delay(3000);              // water for 3 s\n    digitalWrite(PUMP_PIN, LOW);\n    delay(60000);             // let it soak in\n  }\n  delay(2000);\n}\n"},
+{id:"line-follower",name:"Line-Following Robot",type:"Robotics",level:"Intermediate",time:"5 h",board:"Arduino Uno",lang:"Arduino C++",file:"line_follower.ino",kit:"kit-line",
+ blurb:"A two-wheel robot that tracks a black line with a five-sensor array and proportional steering.",
+ parts:[["uno",1],["l298n",1],["ttmotor",1],["irarray",1],["chassis",1],["bat2s",1]],
+ steps:[["Build the chassis","Mount the motors and wheels, then fit the sensor array about 2 cm above the floor at the front."],["Wire the driver","Connect the L298N to the Uno: ENA and ENB to pins 5 and 6, direction pins to 7 through 10. Power the motors from the battery pack."],["Test each sensor","Print the five analog values over serial on black tape and on white paper, then pick a threshold between them."],["Tune the response","Start with KP at 40. Raise it if the robot is slow to turn, lower it if it wobbles."]],
+ code:"const int SENSORS[5] = {A0, A1, A2, A3, A4};\nconst int ENA = 5, IN1 = 7, IN2 = 8;\nconst int ENB = 6, IN3 = 9, IN4 = 10;\nconst int BASE = 150;\nconst float KP = 40.0;\n\nvoid setup() {\n  pinMode(IN1, OUTPUT); pinMode(IN2, OUTPUT);\n  pinMode(IN3, OUTPUT); pinMode(IN4, OUTPUT);\n  digitalWrite(IN1, HIGH); digitalWrite(IN2, LOW);\n  digitalWrite(IN3, HIGH); digitalWrite(IN4, LOW);\n}\n\nfloat lineError() {\n  const int W[5] = {-2, -1, 0, 1, 2};\n  int sum = 0, hits = 0;\n  for (int i = 0; i < 5; i++) {\n    if (analogRead(SENSORS[i]) > 600) { sum += W[i]; hits++; }\n  }\n  return hits ? (float)sum / hits : 0;\n}\n\nvoid loop() {\n  float e = lineError();\n  analogWrite(ENA, constrain(BASE + KP * e, 0, 255));\n  analogWrite(ENB, constrain(BASE - KP * e, 0, 255));\n}\n"},
+{id:"weather-station",name:"WiFi Weather Station",type:"Electronics",level:"Intermediate",time:"4 h",board:"ESP32-S3",lang:"Arduino C++",file:"weather_station.ino",kit:"kit-weather",
+ blurb:"Log temperature, humidity and pressure from a BME280 and show them on a small display.",
+ parts:[["esp32",1],["bme280",1],["oled",1],["breadboard",1]],
+ steps:[["Wire the I2C bus","Connect the BME280 SDA and SCL to GPIO 8 and 9 on the ESP32-S3, plus 3.3 V and GND."],["Install the library","In the Arduino IDE, install the Adafruit BME280 library from the Library Manager."],["Upload and read","Flash the sketch. Temperature, humidity and pressure print every five seconds."],["Show it on the OLED","Add the display on the same two I2C wires and print the same readings with the SSD1306 library."]],
+ code:"#include <Wire.h>\n#include <Adafruit_BME280.h>\n\nAdafruit_BME280 bme;\n\nvoid setup() {\n  Serial.begin(115200);\n  Wire.begin(8, 9);               // SDA, SCL\n  if (!bme.begin(0x76)) {\n    Serial.println(\"BME280 not found, check wiring\");\n    while (true) delay(1000);\n  }\n}\n\nvoid loop() {\n  Serial.printf(\"%.1f C  %.0f %%  %.0f hPa\\n\",\n    bme.readTemperature(),\n    bme.readHumidity(),\n    bme.readPressure() / 100.0F);\n  delay(5000);\n}\n"},
+{id:"obstacle-rover",name:"Obstacle-Avoiding Rover",type:"Robotics",level:"Beginner",time:"4 h",board:"Pico W",lang:"MicroPython",file:"main.py",kit:"kit-rover",
+ blurb:"A small rover that drives forward and turns away from anything closer than 20 cm.",
+ parts:[["pico",1],["hcsr04",1],["ttmotor",1],["l298n",1],["chassis",1],["bat2s",1]],
+ steps:[["Assemble the base","Fit the motors and caster to the chassis and mount the ultrasonic sensor at the front, facing forward."],["Wire the Pico","Trigger on GP3, echo on GP2 through a voltage divider to 3.3 V, motor PWM on GP10 and GP11."],["Load MicroPython","Hold BOOTSEL while plugging in the Pico, copy the MicroPython firmware over, then save the script as main.py."],["Drive","Place the rover on the floor. It turns away from anything closer than 20 cm."]],
+ code:"from machine import Pin, PWM, time_pulse_us\nfrom time import sleep_ms, sleep_us\n\ntrig = Pin(3, Pin.OUT)\necho = Pin(2, Pin.IN)\nleft = PWM(Pin(10), freq=1000)\nright = PWM(Pin(11), freq=1000)\n\ndef distance_cm():\n    trig.low(); sleep_us(2)\n    trig.high(); sleep_us(10); trig.low()\n    t = time_pulse_us(echo, 1, 30000)\n    return t / 58 if t > 0 else 400\n\ndef drive(l, r):\n    left.duty_u16(int(l * 655))     # 0 to 100 percent\n    right.duty_u16(int(r * 655))\n\nwhile True:\n    if distance_cm() < 20:\n        drive(0, 0); sleep_ms(100)\n        drive(70, 0); sleep_ms(450)  # turn away\n    else:\n        drive(70, 70)\n    sleep_ms(30)\n"},
+{id:"gesture-arm",name:"Gesture-Controlled Robot Arm",type:"Robotics",level:"Advanced",time:"8 h",board:"Arduino Uno",lang:"Arduino C++",file:"gesture_arm.ino",kit:"kit-arm",
+ blurb:"Tilt a handheld motion sensor and a two-joint arm follows your hand.",
+ parts:[["uno",1],["mpu6050",1],["sg90",1],["mg996",2],["buck",1],["breadboard",1]],
+ steps:[["Mount the servos","Fix the base and shoulder servos to the frame. Center both at 90 degrees before attaching the arms."],["Power them separately","Feed the servos from the buck converter at 5 V, not from the Uno. Join all grounds."],["Wire the sensor","Connect the MPU-6050 to the Uno at A4 (SDA) and A5 (SCL). Mount it on a glove or a handheld board."],["Tilt to move","Tilt left and right to turn the base, forward and back to lift the shoulder."]],
+ code:"#include <Wire.h>\n#include <Servo.h>\n\nconst int MPU = 0x68;\nServo base, shoulder;\n\nint16_t readAxis(uint8_t reg) {\n  Wire.beginTransmission(MPU);\n  Wire.write(reg);\n  Wire.endTransmission(false);\n  Wire.requestFrom(MPU, 2, true);\n  return (Wire.read() << 8) | Wire.read();\n}\n\nvoid setup() {\n  Wire.begin();\n  Wire.beginTransmission(MPU);\n  Wire.write(0x6B); Wire.write(0);   // wake the sensor\n  Wire.endTransmission(true);\n  base.attach(9);\n  shoulder.attach(10);\n}\n\nvoid loop() {\n  int ax = constrain(readAxis(0x3B), -16000, 16000);\n  int ay = constrain(readAxis(0x3D), -16000, 16000);\n  base.write(map(ax, -16000, 16000, 0, 180));\n  shoulder.write(map(ay, -16000, 16000, 30, 150));\n  delay(20);\n}\n"},
+{id:"motion-camera",name:"Pi Zero Motion Camera",type:"Electronics",level:"Intermediate",time:"3 h",board:"Pi Zero 2 W",lang:"Python",file:"motion_camera.py",kit:"kit-cam",
+ blurb:"A tiny camera that saves a timestamped photo whenever the PIR sensor sees movement.",
+ parts:[["zero2w",1],["cam",1],["pir",1]],
+ steps:[["Connect the camera","Insert the ribbon cable into the camera port with the contacts facing the board, then close the latch."],["Wire the PIR","PIR output to GPIO 17, power to 5 V, ground to GND. Give it 30 seconds to settle after power-up."],["Update the system","Update Raspberry Pi OS. Picamera2 ships with current releases."],["Mount and test","Point the camera at a doorway and walk past. A timestamped photo appears in the script folder."]],
+ code:"from gpiozero import MotionSensor\nfrom picamera2 import Picamera2\nfrom datetime import datetime\nfrom time import sleep\n\npir = MotionSensor(17)\ncam = Picamera2()\ncam.start()\n\nwhile True:\n    pir.wait_for_motion()\n    name = datetime.now().strftime(\"motion_%Y%m%d_%H%M%S.jpg\")\n    cam.capture_file(name)\n    print(\"Saved\", name)\n    sleep(5)\n"},
+{id:"bluetooth-car",name:"Bluetooth RC Car",type:"Robotics",level:"Beginner",time:"4 h",board:"Arduino Uno",lang:"Arduino C++",file:"bluetooth_car.ino",kit:"kit-bt",
+ blurb:"Drive a two-wheel car from your phone over Bluetooth.",
+ parts:[["uno",1],["hc05",1],["l298n",1],["ttmotor",1],["chassis",1],["bat2s",1]],
+ steps:[["Build the car","Assemble the chassis with two motors and wheels, a caster at the back and the battery holder underneath."],["Wire the driver","Same layout as the line follower: ENA and ENB on pins 5 and 6, direction pins on 7 to 10, motor power from the battery pack."],["Connect Bluetooth","HC-05 TX to pin 2 and RX to pin 3 through a voltage divider, because the module expects 3.3 V on RX. Power it from 5 V."],["Pair and drive","Pair the HC-05 with your phone (the default PIN is usually 1234 or 0000), open a Bluetooth serial app and send F, B, L, R or S."]],
+ code:"#include <SoftwareSerial.h>\n\nSoftwareSerial bt(2, 3);   // RX, TX\nconst int ENA = 5, IN1 = 7, IN2 = 8;\nconst int ENB = 6, IN3 = 9, IN4 = 10;\nconst int SPEED = 180;\n\nvoid motors(int l, int r) {\n  digitalWrite(IN1, l > 0); digitalWrite(IN2, l < 0);\n  digitalWrite(IN3, r > 0); digitalWrite(IN4, r < 0);\n  analogWrite(ENA, abs(l));\n  analogWrite(ENB, abs(r));\n}\n\nvoid setup() {\n  bt.begin(9600);\n  for (int p = 5; p <= 10; p++) pinMode(p, OUTPUT);\n}\n\nvoid loop() {\n  if (!bt.available()) return;\n  switch (bt.read()) {\n    case 'F': motors(SPEED, SPEED); break;\n    case 'B': motors(-SPEED, -SPEED); break;\n    case 'L': motors(-SPEED, SPEED); break;\n    case 'R': motors(SPEED, -SPEED); break;\n    default:  motors(0, 0);\n  }\n}\n"},
+{id:"distance-display",name:"Desk Distance Display",type:"Electronics",level:"Beginner",time:"2 h",board:"Arduino Uno",lang:"Arduino C++",file:"distance_display.ino",kit:"kit-ruler",
+ blurb:"Measure distance with ultrasound and show it on an OLED in centimeters.",
+ parts:[["uno",1],["hcsr04",1],["oled",1],["breadboard",1]],
+ steps:[["Wire the sensor","Connect the HC-SR04 trigger to pin 9 and echo to pin 10, with 5 V and GND."],["Add the display","Connect the OLED SDA to A4 and SCL to A5, powered from 5 V or 3.3 V as your module requires."],["Install libraries","Install Adafruit SSD1306 and Adafruit GFX from the Library Manager."],["Measure","Upload the sketch and point the sensor at a wall. The distance updates five times a second."]],
+ code:"#include <Wire.h>\n#include <Adafruit_GFX.h>\n#include <Adafruit_SSD1306.h>\n\nAdafruit_SSD1306 oled(128, 64, &Wire, -1);\nconst int TRIG = 9, ECHO = 10;\n\nfloat readCm() {\n  digitalWrite(TRIG, LOW);  delayMicroseconds(2);\n  digitalWrite(TRIG, HIGH); delayMicroseconds(10);\n  digitalWrite(TRIG, LOW);\n  long us = pulseIn(ECHO, HIGH, 30000);\n  return us ? us / 58.0 : -1;\n}\n\nvoid setup() {\n  pinMode(TRIG, OUTPUT);\n  pinMode(ECHO, INPUT);\n  oled.begin(SSD1306_SWITCHCAPVCC, 0x3C);\n  oled.setTextColor(SSD1306_WHITE);\n}\n\nvoid loop() {\n  float cm = readCm();\n  oled.clearDisplay();\n  oled.setTextSize(3);\n  oled.setCursor(0, 20);\n  if (cm < 0) oled.print(\"--\");\n  else { oled.print(cm, 1); oled.print(\"cm\"); }\n  oled.display();\n  delay(200);\n}\n"},
+{id:"pan-tilt-camera",name:"Pan-Tilt Camera",type:"Robotics",level:"Intermediate",time:"5 h",board:"Pi Zero 2 W",lang:"Python",file:"pan_tilt.py",kit:"kit-pantilt",
+ blurb:"Aim a camera with two servos and save a photo at each position.",
+ parts:[["zero2w",1],["cam",1],["sg90",1],["buck",1]],
+ steps:[["Build the mount","Attach the tilt servo to the pan servo bracket and fix the camera to the tilt horn."],["Power the servos","Feed both servos from the 5 V buck converter and join its ground to the Pi. Never power servos from the Pi 5 V pin."],["Connect the signals","Pan signal to GPIO 12 and tilt signal to GPIO 13."],["Run the sweep","Run the script. The camera visits fifteen positions and saves a photo at each."]],
+ code:"from gpiozero import AngularServo\nfrom picamera2 import Picamera2\nfrom time import sleep\n\npan = AngularServo(12, min_angle=-90, max_angle=90)\ntilt = AngularServo(13, min_angle=-45, max_angle=45)\ncam = Picamera2()\ncam.start()\n\nfor p in range(-60, 61, 30):\n    pan.angle = p\n    for t in (-20, 0, 20):\n        tilt.angle = t\n        sleep(0.6)                 # let the servos settle\n        cam.capture_file(f\"shot_pan{p}_tilt{t}.jpg\")\n\npan.detach()\ntilt.detach()\n"},
+{id:"auto-night-light",name:"Auto Night Light",type:"Electronics",level:"Beginner",time:"2 h",board:"ESP32-S3",lang:"Arduino C++",file:"night_light.ino",kit:"kit-nightlight",
+ blurb:"A lamp that fades on as the room gets dark and off again in daylight.",
+ parts:[["esp32",1],["ldr",1],["ledpack",1],["breadboard",1]],
+ steps:[["Wire the light sensor","Connect the LDR module to 3.3 V, GND and GPIO 4."],["Add the LED","Put an LED and a 220 ohm resistor in series from GPIO 5 to GND. The long leg goes toward GPIO 5."],["Calibrate","Read the raw value in a dark room and in daylight, then set DARK and BRIGHT. If the light does the opposite of what you expect, swap the two numbers."],["Upload","Use Arduino-ESP32 core 3.x, which provides ledcAttach. Cover the sensor and the LED fades on."]],
+ code:"const int LDR_PIN = 4;\nconst int LED_PIN = 5;\nconst int DARK = 3200;    // raw reading in a dark room\nconst int BRIGHT = 800;   // raw reading in daylight\n\nvoid setup() {\n  ledcAttach(LED_PIN, 5000, 8);   // pin, 5 kHz, 8-bit\n  analogReadResolution(12);\n}\n\nvoid loop() {\n  int light = analogRead(LDR_PIN);\n  int level = constrain(map(light, BRIGHT, DARK, 0, 255), 0, 255);\n  ledcWrite(LED_PIN, level);\n  delay(50);\n}\n"},
+{id:"motion-alarm",name:"Motion Alarm",type:"Electronics",level:"Beginner",time:"2 h",board:"Arduino Uno",lang:"Arduino C++",file:"motion_alarm.ino",kit:"kit-alarm",
+ blurb:"A PIR sensor sets off a buzzer and a flashing LED when someone walks in.",
+ parts:[["uno",1],["pir",1],["buzzer",1],["ledpack",1],["breadboard",1]],
+ steps:[["Wire the PIR","PIR output to pin 2, power to 5 V, ground to GND. Turn both potentiometers to the middle to start."],["Add the buzzer and LED","Buzzer on pin 8 and an LED with a 220 ohm resistor on pin 9, both returning to GND."],["Wait for warm-up","The sketch waits 30 seconds after power-up so the PIR can settle."],["Test","Walk in front of the sensor. The buzzer and LED pulse six times."]],
+ code:"const int PIR = 2;\nconst int BUZZER = 8;\nconst int LED = 9;\n\nvoid setup() {\n  pinMode(PIR, INPUT);\n  pinMode(BUZZER, OUTPUT);\n  pinMode(LED, OUTPUT);\n  delay(30000);                  // PIR warm-up\n}\n\nvoid loop() {\n  if (digitalRead(PIR) == HIGH) {\n    for (int i = 0; i < 6; i++) {\n      tone(BUZZER, 2000, 150);\n      digitalWrite(LED, HIGH); delay(200);\n      digitalWrite(LED, LOW);  delay(200);\n    }\n  }\n}\n"},
+{id:"self-balancing-robot",name:"Self-Balancing Robot",type:"Robotics",level:"Advanced",time:"10 h",board:"Arduino Uno",lang:"Arduino C++",file:"balancing_robot.ino",kit:"kit-balance",
+ blurb:"A two-wheel robot that stays upright by correcting its tilt hundreds of times a second.",
+ parts:[["uno",1],["mpu6050",1],["l298n",1],["ttmotor",1],["bat2s",1],["chassis",1]],
+ steps:[["Build a tall, narrow body","Mount the battery low and the sensor in line with the wheel axle so the tilt reading is clean."],["Wire the motors","Use the same driver wiring as the line follower. Check both wheels drive forward when the code outputs a positive value, and swap motor wires if one is reversed."],["Check the angle","Print the angle over serial. It should read near zero when upright and change sign as you tilt each way. If it does not, swap the accelerometer axes in the code."],["Tune KP, then KD","Start with KD at zero and raise KP until the robot oscillates, then back off by a third. Add KD to damp the wobble."]],
+ code:"#include <Wire.h>\n\nconst int MPU = 0x68;\nconst int ENA = 5, IN1 = 7, IN2 = 8;\nconst int ENB = 6, IN3 = 9, IN4 = 10;\nconst float KP = 22.0, KD = 0.8;   // tune these first\nfloat angle = 0;\nunsigned long last;\n\nint16_t read16(uint8_t reg) {\n  Wire.beginTransmission(MPU);\n  Wire.write(reg);\n  Wire.endTransmission(false);\n  Wire.requestFrom(MPU, 2, true);\n  return (Wire.read() << 8) | Wire.read();\n}\n\nvoid drive(int pwm) {            // positive drives forward\n  bool fwd = pwm >= 0;\n  int s = constrain(abs(pwm), 0, 255);\n  digitalWrite(IN1, fwd); digitalWrite(IN2, !fwd);\n  digitalWrite(IN3, fwd); digitalWrite(IN4, !fwd);\n  analogWrite(ENA, s);\n  analogWrite(ENB, s);\n}\n\nvoid setup() {\n  Wire.begin();\n  Wire.beginTransmission(MPU);\n  Wire.write(0x6B); Wire.write(0);   // wake the sensor\n  Wire.endTransmission(true);\n  for (int p = 5; p <= 10; p++) pinMode(p, OUTPUT);\n  last = micros();\n}\n\nvoid loop() {\n  unsigned long now = micros();\n  float dt = (now - last) / 1e6;\n  last = now;\n\n  float accAngle = atan2((float)read16(0x3D), (float)read16(0x3F)) * 57.2958;\n  float gyroRate = read16(0x43) / 131.0;           // degrees per second\n  angle = 0.98 * (angle + gyroRate * dt) + 0.02 * accAngle;\n\n  drive((int)(KP * angle + KD * gyroRate));\n}\n"}
+];
+var P={};PROJECTS.forEach(function(p){P[p.id]=p});
+
+var SOFTWARE=[
+ {id:"sw-arduino",group:"Coding",n:"Arduino IDE 2",d:"Write sketches and upload them to Arduino, ESP32 and Pico boards. Includes the Library Manager and Serial Monitor.",os:"Windows, macOS, Linux",v:"Official site",url:"https://www.arduino.cc/en/software"},
+ {id:"sw-vscode",group:"Coding",n:"Visual Studio Code",d:"A free code editor with extensions for C++, Python and embedded work.",os:"Windows, macOS, Linux",v:"Official site",url:"https://code.visualstudio.com/download"},
+ {id:"sw-pio",group:"Coding",n:"PlatformIO",d:"Professional embedded development inside VS Code, with board and library management built in.",os:"Windows, macOS, Linux",v:"Official site",url:"https://platformio.org/install/ide?install=vscode"},
+ {id:"sw-thonny",group:"Coding",n:"Thonny",d:"A simple Python editor that also uploads MicroPython to the Pico and ESP32.",os:"Windows, macOS, Linux",v:"Official site",url:"https://thonny.org/"},
+ {id:"sw-imager",group:"Coding",n:"Raspberry Pi Imager",d:"Write Raspberry Pi OS to a memory card and set up Wi-Fi and SSH before first boot.",os:"Windows, macOS, Linux",v:"Official site",url:"https://www.raspberrypi.com/software/"},
+ {id:"sw-cura",group:"3D printing",n:"UltiMaker Cura",d:"A free slicer that turns 3D models into printer instructions. Works with most FDM printers.",os:"Windows, macOS, Linux",v:"Official site",url:"https://ultimaker.com/software/ultimaker-cura/"},
+ {id:"sw-prusa",group:"3D printing",n:"PrusaSlicer",d:"An open-source slicer with detailed control over supports, infill and multi-material prints.",os:"Windows, macOS, Linux",v:"GitHub releases",url:"https://github.com/prusa3d/PrusaSlicer/releases"},
+ {id:"sw-orca",group:"3D printing",n:"OrcaSlicer",d:"An open-source slicer with built-in calibration tools and profiles for many printers.",os:"Windows, macOS, Linux",v:"GitHub releases",url:"https://github.com/SoftFever/OrcaSlicer/releases"},
+ {id:"sw-freecad",group:"3D printing",n:"FreeCAD",d:"Free parametric 3D modeler for designing enclosures, brackets and mechanical parts.",os:"Windows, macOS, Linux",v:"Official site",url:"https://www.freecad.org/downloads.php"},
+ {id:"sw-tinkercad",group:"3D printing",n:"Tinkercad",d:"Design simple 3D parts in your browser. No install, good for beginners.",os:"Web browser",v:"Official site",url:"https://www.tinkercad.com/"},
+ {id:"sw-flash",group:"BUILD X tools",n:"BUILD X Flash Tool",d:"Pick a board, pick a project, upload the firmware. Supports ESP32, Arduino Uno and Pico.",os:"Windows, macOS, Linux",v:"Coming soon",url:""},
+ {id:"sw-wiring",group:"BUILD X tools",n:"BUILD X Wiring Viewer",d:"Interactive wiring diagrams for every project. Click a pin to highlight where it goes.",os:"Windows, macOS, Linux",v:"Coming soon",url:""}
+];
+
+var CODES=[
+ {id:"blink",title:"Blink an LED",board:"Any Arduino or ESP32",lang:"Arduino C++",file:"blink.ino",desc:"The first sketch to run on any board.",libs:[],code:String.raw`const int LED_PIN = LED_BUILTIN;
+
+void setup() {
+  pinMode(LED_PIN, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(LED_PIN, HIGH);
+  delay(500);
+  digitalWrite(LED_PIN, LOW);
+  delay(500);
+}
+`},
+ {id:"servo-sweep",title:"Servo sweep",board:"Arduino Uno",lang:"Arduino C++",file:"servo_sweep.ino",desc:"Move a hobby servo from 0 to 180 degrees and back.",libs:["Servo (included with Arduino IDE)"],code:String.raw`#include <Servo.h>
+
+Servo s;
+
+void setup() {
+  s.attach(9);
+}
+
+void loop() {
+  for (int a = 0; a <= 180; a += 2) { s.write(a); delay(15); }
+  for (int a = 180; a >= 0; a -= 2) { s.write(a); delay(15); }
+}
+`},
+ {id:"ultrasonic-serial",title:"Ultrasonic distance to serial",board:"Arduino Uno",lang:"Arduino C++",file:"ultrasonic.ino",desc:"Read an HC-SR04 and print the distance in centimeters. Prints -1 when nothing is in range.",libs:[],code:String.raw`const int TRIG = 9, ECHO = 10;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(TRIG, OUTPUT);
+  pinMode(ECHO, INPUT);
+}
+
+void loop() {
+  digitalWrite(TRIG, LOW);  delayMicroseconds(2);
+  digitalWrite(TRIG, HIGH); delayMicroseconds(10);
+  digitalWrite(TRIG, LOW);
+  long us = pulseIn(ECHO, HIGH, 30000);
+  Serial.println(us ? us / 58.0 : -1);
+  delay(200);
+}
+`},
+ {id:"button-led",title:"Button toggles an LED",board:"Arduino Uno",lang:"Arduino C++",file:"button_led.ino",desc:"Press the button to switch the LED on or off, with simple debouncing.",libs:[],code:String.raw`const int BTN = 2, LED = 13;
+bool on = false, last = HIGH;
+unsigned long t = 0;
+
+void setup() {
+  pinMode(BTN, INPUT_PULLUP);
+  pinMode(LED, OUTPUT);
+}
+
+void loop() {
+  bool now = digitalRead(BTN);
+  if (now != last && millis() - t > 40) {
+    t = millis();
+    if (now == LOW) { on = !on; digitalWrite(LED, on); }
+  }
+  last = now;
+}
+`},
+ {id:"oled-hello",title:"OLED hello world",board:"Arduino Uno",lang:"Arduino C++",file:"oled_hello.ino",desc:"Print text on a 128x64 I2C OLED display.",libs:["Adafruit SSD1306","Adafruit GFX Library"],code:String.raw`#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+Adafruit_SSD1306 oled(128, 64, &Wire, -1);
+
+void setup() {
+  oled.begin(SSD1306_SWITCHCAPVCC, 0x3C);
+  oled.clearDisplay();
+  oled.setTextSize(2);
+  oled.setTextColor(SSD1306_WHITE);
+  oled.setCursor(0, 20);
+  oled.println("Hello");
+  oled.display();
+}
+
+void loop() {}
+`},
+ {id:"esp32-wifi-scan",title:"Wi-Fi network scanner",board:"ESP32-S3",lang:"Arduino C++",file:"wifi_scan.ino",desc:"List the Wi-Fi networks around you with their signal strength.",libs:["WiFi (included with the ESP32 board package)"],code:String.raw`#include <WiFi.h>
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.mode(WIFI_STA);
+  WiFi.disconnect();
+}
+
+void loop() {
+  int n = WiFi.scanNetworks();
+  Serial.printf("%d networks found\n", n);
+  for (int i = 0; i < n; i++) {
+    Serial.printf("%s  (%d dBm)\n", WiFi.SSID(i).c_str(), WiFi.RSSI(i));
+  }
+  delay(5000);
+}
+`},
+ {id:"pico-blink",title:"Blink the Pico W LED",board:"Raspberry Pi Pico W",lang:"MicroPython",file:"main.py",desc:"Toggle the onboard LED twice a second.",libs:["MicroPython firmware for Pico W"],code:String.raw`from machine import Pin
+from time import sleep
+
+led = Pin("LED", Pin.OUT)   # onboard LED on the Pico W
+
+while True:
+    led.toggle()
+    sleep(0.5)
+`},
+ {id:"pi-gpio-led",title:"Blink an LED from a Raspberry Pi",board:"Raspberry Pi Zero 2 W",lang:"Python",file:"blink.py",desc:"Switch an LED on GPIO 17 on and off. Use a 220 ohm resistor in series.",libs:["gpiozero (preinstalled on Raspberry Pi OS)"],code:String.raw`from gpiozero import LED
+from time import sleep
+
+led = LED(17)
+
+while True:
+    led.on()
+    sleep(1)
+    led.off()
+    sleep(1)
+`}
+];
+
+var FOUNDER={name:"Founder name",role:"Founder of BUILD X",bio:"Write your story here: who you are, why you started BUILD X and what you like to build.\n\nSign in as admin and click the pencil on this page to replace this text."};
+var COFOUNDER={name:"Co-Founder name",role:"Co-Founder of BUILD X",bio:"Add the co-founder story here."};
+
+var LIBS0={"plant-monitor":["ESP32 board package (Boards Manager)"],"line-follower":[],"weather-station":["Adafruit BME280 Library","Adafruit Unified Sensor"],"obstacle-rover":["MicroPython firmware for Pico W"],"gesture-arm":["Servo (included with Arduino IDE)","Wire (included)"],"motion-camera":["gpiozero (preinstalled on Raspberry Pi OS)","picamera2 (preinstalled on Raspberry Pi OS)"],"bluetooth-car":["SoftwareSerial (included)"],"distance-display":["Adafruit SSD1306","Adafruit GFX Library"],"pan-tilt-camera":["gpiozero (preinstalled on Raspberry Pi OS)","picamera2 (preinstalled on Raspberry Pi OS)"],"auto-night-light":["ESP32 board package 3.x (Boards Manager)"],"motion-alarm":[],"self-balancing-robot":["Wire (included)"]};
+
+/* name, currency code, symbol, approximate units per US dollar, decimals */
+var COUNTRIES=[
+ ["Australia","AUD","A$",1.52,2],["Austria","EUR","€",0.88,2],["Bangladesh","BDT","BDT ",122,0],["Belgium","EUR","€",0.88,2],
+ ["Brazil","BRL","R$",5.4,2],["Canada","CAD","CA$",1.38,2],["China","CNY","CN¥",7.2,2],["Denmark","DKK","DKK ",6.6,2],
+ ["Egypt","EGP","EGP ",48,0],["Finland","EUR","€",0.88,2],["France","EUR","€",0.88,2],["Germany","EUR","€",0.88,2],
+ ["India","INR","₹",88,0],["Indonesia","IDR","Rp ",16300,0],["Ireland","EUR","€",0.88,2],["Italy","EUR","€",0.88,2],
+ ["Japan","JPY","JP¥",152,0],["Kenya","KES","KSh ",129,0],["Malaysia","MYR","RM ",4.4,2],["Mexico","MXN","MX$",18.5,2],
+ ["Nepal","NPR","NPR ",140,0],["Netherlands","EUR","€",0.88,2],["New Zealand","NZD","NZ$",1.68,2],["Nigeria","NGN","₦",1500,0],
+ ["Norway","NOK","NOK ",10.8,2],["Pakistan","PKR","PKR ",280,0],["Philippines","PHP","₱",58,2],["Poland","PLN","PLN ",3.9,2],
+ ["Portugal","EUR","€",0.88,2],["Saudi Arabia","SAR","SAR ",3.75,2],["Singapore","SGD","S$",1.31,2],["South Africa","ZAR","R",18,2],
+ ["South Korea","KRW","₩",1400,0],["Spain","EUR","€",0.88,2],["Sri Lanka","LKR","LKR ",300,0],["Sweden","SEK","SEK ",10.6,2],
+ ["Switzerland","CHF","CHF ",0.88,2],["Thailand","THB","฿",34,2],["Turkey","TRY","TRY ",35,2],["United Arab Emirates","AED","AED ",3.67,2],
+ ["United Kingdom","GBP","£",0.76,2],["United States","USD","$",1,2],["Vietnam","VND","₫",25500,0],["Other country","USD","$",1,2]
+];
+
+var LS={
+ get:function(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},
+ set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}},
+ del:function(k){try{localStorage.removeItem(k)}catch(e){}}
+};
+var profile=LS.get("bl-profile");
+function curInfo(){
+ var c=profile&&COUNTRIES.filter(function(x){return x[0]===profile.country})[0];
+ return c||["United States","USD","$",1,2];
+}
+function money(n){
+ var c=curInfo(),v=n*c[3];
+ return c[2]+v.toLocaleString(undefined,{minimumFractionDigits:c[4],maximumFractionDigits:c[4]});
+}
+
+function normProject(p){if(!Array.isArray(p.libs))p.libs=(LIBS0[p.id]||[]).slice();if(!Array.isArray(p.videos))p.videos=[];if(!Array.isArray(p.parts))p.parts=[];if(!Array.isArray(p.steps))p.steps=[]}
+PROJECTS.forEach(normProject);
+FOUNDER.words=FOUNDER.words||"";FOUNDER.video=FOUNDER.video||"";
+var SETTINGS={emailjs:{publicKey:"",serviceId:"",templateId:"",notificationTemplateId:""}};
+function applyContent(c){
+ if(!c||typeof c!=="object")return;
+ if(Array.isArray(c.products))PRODUCTS=c.products;
+ if(Array.isArray(c.projects)){PROJECTS=c.projects;PROJECTS.forEach(normProject)}
+ if(Array.isArray(c.software))SOFTWARE=c.software;
+ if(Array.isArray(c.codes))CODES=c.codes;
+ if(c.founder&&typeof c.founder==="object")FOUNDER=Object.assign({name:"",role:"",bio:"",words:"",video:""},c.founder);
+ if(c.cofounder&&typeof c.cofounder==="object")COFOUNDER=Object.assign({name:"",role:"",bio:""},c.cofounder);
+ if(c.settings&&c.settings.emailjs)SETTINGS.emailjs=Object.assign({publicKey:"",serviceId:"",templateId:"",notificationTemplateId:""},c.settings.emailjs);
+}
+var adminAtLoad=false;try{adminAtLoad=sessionStorage.getItem("bl-admin")==="1"}catch(e){}
+if(adminAtLoad)applyContent(LS.get("bl-data"));
+function rebuild(){
+ X={};PRODUCTS.forEach(function(p){X[p.id]=p});
+ P={};PROJECTS.forEach(function(p){P[p.id]=p});
+}
+rebuild();
+
+
+/* ---------- state ---------- */
+var FREE_SHIP=75;
+var SHIP={standard:{n:"Standard",d:"3 to 6 business days",p:6.5},express:{n:"Express",d:"1 to 2 business days",p:14.9}};
+var shipSel="standard";
+var cart={};
+try{var raw=JSON.parse(localStorage.getItem("bl-cart")||"{}");Object.keys(raw||{}).forEach(function(k){if(X[k]&&raw[k]>0)cart[k]=raw[k]|0})}catch(e){}
+function save(){try{localStorage.setItem("bl-cart",JSON.stringify(cart))}catch(e){}}
+function cartIds(){return Object.keys(cart).filter(function(k){return cart[k]>0&&X[k]})}
+function cartCount(){return cartIds().reduce(function(s,k){return s+cart[k]},0)}
+function subtotal(){return cartIds().reduce(function(s,k){return s+cart[k]*X[k].price},0)}
+function updateCount(){$("#count").textContent=cartCount()}
+function add(id,n){cart[id]=(cart[id]||0)+(n||1);save();updateCount()}
+var tt;
+function toast(msg){var t=$("#toast");t.textContent=msg;t.classList.add("on");clearTimeout(tt);tt=setTimeout(function(){t.classList.remove("on")},2600)}
+
+/* ---------- art ---------- */
+function rng(seed){var s=0;for(var i=0;i<seed.length;i++)s=(s*31+seed.charCodeAt(i))>>>0;return function(){s=(s*1664525+1013904223)>>>0;return s/4294967296}}
+function traceArt(seed,w,h){
+ w=w||320;h=h||180;var r=rng(seed),d="",pads="";
+ for(var i=0;i<9;i++){
+  var x=Math.round(r()*w/20)*20,y=Math.round(r()*h/20)*20;
+  var path="M"+x+" "+y;pads+='<circle cx="'+x+'" cy="'+y+'" r="3.5"/>';
+  var n=2+Math.floor(r()*3);
+  for(var k=0;k<n;k++){
+   var dx=(Math.floor(r()*5)-2)*20,dy=(Math.floor(r()*5)-2)*20;
+   x=Math.max(0,Math.min(w,x+dx));y=Math.max(0,Math.min(h,y+dy));
+   path+="L"+x+" "+y;
+  }
+  pads+='<circle cx="'+x+'" cy="'+y+'" r="3.5"/>';
+  d+='<path d="'+path+'"/>';
+ }
+ return '<svg viewBox="0 0 '+w+" "+h+'" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g class="tr">'+d+'</g><g class="pd">'+pads+"</g></svg>";
+}
+
+/* ---------- component illustrations ---------- */
+var K={pcb:"#1b6a56",pcb2:"#2c8a6f",ink:"#171d26",gray:"#3b4553",metal:"#c4cdd7",metal2:"#8d98a6",gold:"#e2b650",blue:"#2160ad",blue2:"#3a78c4",red:"#c43d3d",yel:"#e6bf2e",white:"#eef1f5",pur:"#4a3f9a",org:"#e8863a",glass:"#0c1a2b"};
+function R(x,y,w,h,f,rx){return '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="'+(rx||0)+'" fill="'+f+'"/>'}
+function Ci(x,y,r,f){return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="'+f+'"/>'}
+function Ln(d,c,w){return '<path d="'+d+'" fill="none" stroke="'+c+'" stroke-width="'+(w||2)+'" stroke-linecap="round" stroke-linejoin="round"/>'}
+function pins(x,y,n,st,s){var o="";for(var i=0;i<n;i++)o+=R(x+i*st,y,s||3,s||3,K.gold,.5);return o}
+function pinsV(x,y,n,st,s){var o="";for(var i=0;i<n;i++)o+=R(x,y+i*st,s||3,s||3,K.gold,.5);return o}
+function dots(y){return '<path d="M20 '+y+'h120" fill="none" stroke="#9b9484" stroke-width="2" stroke-dasharray="1.6 4"/>'}
+function servo(c,h){return R(30,38,100,44,c,3)+R(14,52,16,10,c,1)+R(130,52,16,10,c,1)+R(62,26,34,14,c,2)+R(72,22,42,9,h,4.5)+Ci(78,26,7,h)+Ci(78,26,2.5,K.metal2)+Ln("M30 62h-22",K.org,2.5)+Ln("M30 69h-22",K.red,2.5)+Ln("M30 76h-22",K.metal2,2.5)}
+var DRAW={
+esp32:function(){return R(8,26,144,48,K.gray,3)+R(2,41,14,16,K.metal,2)+pins(22,29,20,6.4)+pins(22,68,20,6.4)+R(64,34,56,32,K.metal2,2)+R(68,38,48,24,K.metal,1)+Ln("M122 50h4l3-9 6 18 6-18 3 9h6",K.gold,1.6)+R(26,44,22,12,K.ink,1)+Ci(54,50,2.5,K.red)},
+uno:function(){return R(10,14,140,72,K.blue,4)+R(2,22,34,26,K.metal,2)+R(2,58,24,18,K.ink,2)+R(42,17,100,5,K.ink,1)+R(42,78,100,5,K.ink,1)+R(70,40,52,14,K.ink,1)+Ci(136,50,5,K.metal2)+R(46,60,26,6,K.white,1)+Ci(96,66,4,K.gold)},
+pico:function(){return R(10,30,140,40,K.pcb2,3)+R(2,44,16,12,K.metal,1.5)+pins(14,32,20,6.4,2.6)+pins(14,65,20,6.4,2.6)+R(72,40,22,22,K.ink,2)+R(100,43,18,16,K.metal,1)+Ci(42,50,4,K.white)+Ln("M120 40h6v6h6v-6h6",K.gold,1.4)},
+zero2w:function(){return R(10,28,140,44,K.pcb,3)+R(10,36,30,26,K.metal2,2)+pins(46,31,16,6.4,2.4)+pins(46,66,16,6.4,2.4)+R(60,40,26,22,K.metal,1.5)+R(92,42,20,20,K.ink,1)+R(118,38,30,24,K.metal2,2)+Ci(50,50,3.5,K.red)},
+soil:function(){return R(8,38,106,24,K.pcb2,12)+R(20,44,80,3,K.ink,1)+R(20,53,80,3,K.ink,1)+R(112,34,38,32,K.ink,2)+pins(120,44,3,9,4)+Ci(24,50,4,K.pcb)},
+bme280:function(){return R(40,12,80,76,K.pur,4)+pinsV(46,24,4,13,4)+R(74,34,28,28,K.metal,2)+R(80,40,8,8,K.ink,1)+Ci(106,24,3,K.ink)+R(78,70,28,6,K.white,1)},
+hcsr04:function(){return R(8,18,144,64,K.blue,4)+Ci(48,50,22,K.metal)+Ci(48,50,15,K.ink)+Ci(48,50,7,K.metal2)+Ci(112,50,22,K.metal)+Ci(112,50,15,K.ink)+Ci(112,50,7,K.metal2)+R(70,56,20,10,K.metal2,1)+pins(66,73,4,7,3)},
+irarray:function(){var o=R(10,32,140,36,K.pur,3)+pins(40,60,5,18,4);for(var i=0;i<5;i++)o+=Ci(28+i*26,42,5,K.white)+Ci(28+i*26,42,2.5,K.ink);return o},
+mpu6050:function(){return R(36,18,88,64,K.pur,4)+pinsV(42,24,8,7.5,3)+R(66,36,32,32,K.ink,2)+Ci(72,42,2.5,K.white)+R(104,30,12,8,K.metal,1)},
+pir:function(){return R(30,10,100,80,K.pcb2,4)+Ci(80,44,30,K.white)+Ci(80,44,22,"#dfe4ea")+Ci(80,44,12,"#f6f8fa")+pins(64,78,3,12,4)+Ci(44,72,5,K.org)+Ci(116,72,5,K.org)},
+cam:function(){return R(14,24,56,52,K.pcb,3)+Ci(42,50,18,K.ink)+Ci(42,50,12,"#2b3646")+Ci(42,50,5,"#6aa8d8")+R(70,38,76,24,K.org,2)+R(140,36,12,28,K.metal,1)},
+oled:function(){return R(26,18,108,64,K.ink,4)+R(32,30,96,46,K.glass,2)+R(40,38,40,5,"#7fd0ff",1)+R(40,48,64,5,"#7fd0ff",1)+R(40,58,28,5,"#7fd0ff",1)+pins(52,21,4,8,3)},
+l298n:function(){var o=R(20,14,120,72,K.red,4)+R(54,20,52,34,K.ink,2);for(var i=0;i<6;i++)o+=R(58+i*8,20,4,34,K.metal2,1);return o+R(8,28,14,18,K.blue2,2)+R(138,28,14,18,K.blue2,2)+R(60,62,40,12,K.blue2,2)+Ci(36,66,5,K.gold)+Ci(124,66,5,K.gold)},
+ttmotor:function(){return R(18,34,74,34,K.yel,4)+R(30,28,14,6,K.yel,1)+Ci(116,50,30,K.gray)+Ci(116,50,20,"#2b323d")+Ci(116,50,7,K.metal)+R(92,46,20,8,K.metal2,1)+Ln("M18 44h-10",K.red,2.5)+Ln("M18 58h-10",K.metal2,2.5)},
+sg90:function(){return servo(K.blue2,K.white)},
+mg996:function(){return servo(K.gray,K.metal)},
+pump:function(){return R(30,30,62,40,"#7e8a99",7)+R(22,38,10,24,K.metal,2)+R(92,40,18,10,K.metal,2)+Ln("M108 45c14 0 20-14 34-14",K.blue2,5)+Ln("M30 40h-24",K.red,2.5)+Ln("M30 60h-24",K.metal2,2.5)},
+bat2s:function(){return R(14,24,132,52,"#303a47",5)+R(22,31,116,16,"#1b222b",8)+R(22,53,116,16,"#1b222b",8)+R(18,35,5,8,K.metal,1)+R(137,35,5,8,K.metal,1)+R(18,57,5,8,K.metal,1)+R(137,57,5,8,K.metal,1)+Ln("M146 40h10",K.red,2.5)+Ln("M146 60h10",K.metal2,2.5)},
+buck:function(){return R(26,22,108,56,K.blue,3)+R(46,32,34,34,K.ink,3)+Ci(104,40,10,K.metal2)+Ci(104,40,6,K.metal)+Ci(104,64,5,K.gold)+R(18,28,10,18,K.blue2,1)+R(18,54,10,18,K.blue2,1)+R(132,28,10,18,K.blue2,1)+R(132,54,10,18,K.blue2,1)},
+breadboard:function(){var o=R(14,16,132,68,"#e8e2d4",4)+R(14,45,132,8,"#d2cbb8",0)+R(18,19,124,3,K.red,1)+R(18,78,124,3,K.blue,1);for(var k=0;k<5;k++)o+=dots(27+k*3.4)+dots(56+k*3.4);return o+Ln("M40 30c8-20 32-20 40 0",K.red,2.5)+Ln("M100 64c8 18 28 18 36 0",K.blue2,2.5)},
+iron:function(){return '<g transform="rotate(-25 80 50)">'+R(10,42,72,16,K.org,8)+R(82,45,22,10,K.metal2,2)+R(104,47.5,34,5,K.metal,2.5)+Ln("M10 50h-8","#6b7686",2.5)+"</g>"},
+chassis:function(){var o=R(24,22,112,56,"#4b86ab",5);for(var i=0;i<6;i++)o+=Ci(40+i*16,36,3,K.glass)+Ci(40+i*16,64,3,K.glass);return o+R(34,10,28,12,K.gray,3)+R(34,78,28,12,K.gray,3)+Ci(124,50,6,K.metal)},
+hc05:function(){return R(30,16,100,68,K.pcb,3)+R(44,24,58,28,K.metal,2)+R(104,30,16,16,K.ink,1)+pins(44,72,6,9,3)+Ci(118,64,3,K.red)},
+ldr:function(){return R(38,14,84,72,K.blue,4)+Ci(80,42,18,"#d9a441")+Ln("M66 42c4-8 8 8 12 0s8 8 12 0",K.ink,1.6)+pins(58,76,3,14,4)+Ci(112,70,4,K.org)},
+ledpack:function(){var c=[K.red,K.yel,"#3fbf6e",K.blue2,K.white],o="";for(var i=0;i<5;i++){var x=28+i*26;o+=R(x-4,56,2,34,K.metal,1)+R(x+2,56,2,34,K.metal,1)+R(x-9,36,18,20,c[i],2)+Ci(x,36,9,c[i])+R(x-11,54,22,4,c[i],1)}return o},
+buzzer:function(){return Ci(80,50,36,K.gray)+Ci(80,50,30,"#222a35")+Ci(80,50,7,"#0e1218")+R(62,84,3,14,K.metal,1)+R(95,84,3,14,K.metal,1)}
+};
+function drawPart(id){var f=DRAW[id];return f?f():""}
+function partArt(id){return '<svg class="cmp" viewBox="-8 -6 176 112" preserveAspectRatio="xMidYMid meet" aria-hidden="true">'+drawPart(id)+"</svg>"}
+function multiArt(ids){var n=ids.length,off=(300-n*100)/2,o="";for(var i=0;i<n;i++)o+='<svg x="'+(off+i*100)+'" y="19" width="100" height="62" viewBox="0 0 160 100">'+drawPart(ids[i])+"</svg>";return '<svg class="cmp" viewBox="0 0 300 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true">'+o+"</svg>"}
+function kitArt(kitId){var p=PROJECTS.filter(function(q){return q.kit===kitId})[0];return p?multiArt(p.parts.slice(0,3).map(function(a){return a[0]})):""}
+
+/* ---------- simulations ---------- */
+var SIMS=[["line","Line-following robot"],["rover","Obstacle rover"],["plant","Plant monitor"],["night","Night light"],["alarm","Motion alarm"],["own","Build your own"]];
+var simName="line",simRaf=0,simTimer=0,simTok=0;
+function simStop(){simTok++;if(simRaf){cancelAnimationFrame(simRaf);simRaf=0}if(simTimer){clearInterval(simTimer);simTimer=0}}
+function guideLink(id){return P[id]?'<p style="font-size:.9rem"><a href="#p-'+id+'" style="text-decoration:underline">View the build guide and code</a></p>':""}
+function showSim(name){
+ simStop();simName=name;
+ var b=$("#simbox");if(!b)return;
+ b.onclick=null;b.oninput=null;
+ $$("#simchips .chip").forEach(function(c){c.setAttribute("aria-pressed",c.dataset.sim===name?"true":"false")});
+ if(name==="line")simLine(b);
+ else if(name==="rover")simRover(b);
+ else if(name==="plant")simPlant(b);
+ else if(name==="night")simNight(b);
+ else if(name==="alarm")simAlarm(b);
+ else simOwn(b);
+}
+
+function simLine(b){
+ b.innerHTML='<div class="simgrid"><div class="simcv"><canvas id="cv" width="640" height="360" aria-label="Line-following robot simulation"></canvas></div>'+
+  '<div class="box"><h3>Controls</h3>'+
+  '<label class="f" for="s-kp">KP, steering gain: <b id="v-kp">40</b><input id="s-kp" type="range" min="0" max="120" value="40"></label>'+
+  '<label class="f" for="s-base">BASE, motor speed: <b id="v-base">150</b><input id="s-base" type="range" min="60" max="255" value="150"></label>'+
+  '<button class="btn ghost" id="s-reset" type="button">Restart</button>'+
+  '<div class="mono readout" id="s-read"></div>'+
+  '<p class="muted" style="font-size:.86rem">Same rule as the Arduino code: five sensors give a weighted error, then left = BASE + KP x error and right = BASE - KP x error. If no sensor sees the line, the robot drives straight.</p>'+guideLink("line-follower")+"</div></div>";
+ var cv=$("#cv"),ctx=cv.getContext("2d"),W=640,H=360;
+ var tr=document.createElement("canvas");tr.width=W;tr.height=H;
+ var tc=tr.getContext("2d",{willReadFrequently:true});
+ function pt(t){var r=1+0.1*Math.cos(3*t);return [320+235*r*Math.cos(t),180+118*r*Math.sin(t)]}
+ tc.fillStyle="#e9edf2";tc.fillRect(0,0,W,H);
+ tc.strokeStyle="#10151c";tc.lineWidth=14;tc.lineJoin="round";tc.beginPath();
+ for(var i=0;i<=360;i++){var q=pt(i/360*Math.PI*2);if(i)tc.lineTo(q[0],q[1]);else tc.moveTo(q[0],q[1])}
+ tc.closePath();tc.stroke();
+ function dark(x,y){x=Math.round(x);y=Math.round(y);if(x<0||y<0||x>=W||y>=H)return false;return tc.getImageData(x,y,1,1).data[0]<90}
+ var R,trail;
+ function init(){var a=pt(0),c=pt(0.02);R={x:a[0],y:a[1],th:Math.atan2(c[1]-a[1],c[0]-a[0]),sv:[0,0,0,0,0],sp:[[0,0],[0,0],[0,0],[0,0],[0,0]],e:0,l:0,r:0};trail=[]}
+ init();
+ function step(){
+  var kp=+$("#s-kp").value,base=+$("#s-base").value,c=Math.cos(R.th),s=Math.sin(R.th),sum=0,hits=0;
+  for(var i=0;i<5;i++){
+   var px=R.x+22*c-(i-2)*9*s,py=R.y+22*s+(i-2)*9*c,on=dark(px,py);
+   R.sv[i]=on;R.sp[i]=[px,py];
+   if(on){sum+=i-2;hits++}
+  }
+  var e=hits?sum/hits:0,vl=clamp(base+kp*e,0,255),vr=clamp(base-kp*e,0,255);
+  R.e=e;R.l=vl;R.r=vr;
+  R.th+=(vl-vr)/255*0.12;
+  var v=(vl+vr)/2/255*3.2;
+  R.x+=v*Math.cos(R.th);R.y+=v*Math.sin(R.th);
+  trail.push([R.x,R.y]);if(trail.length>500)trail.shift();
+ }
+ function draw(){
+  ctx.drawImage(tr,0,0);
+  ctx.strokeStyle="rgba(242,163,58,.6)";ctx.lineWidth=2;ctx.beginPath();
+  trail.forEach(function(p,i){if(i)ctx.lineTo(p[0],p[1]);else ctx.moveTo(p[0],p[1])});ctx.stroke();
+  ctx.save();ctx.translate(R.x,R.y);ctx.rotate(R.th);
+  ctx.fillStyle="#2160ad";ctx.fillRect(-14,-11,28,22);ctx.fillStyle="#c4cdd7";ctx.fillRect(8,-11,6,22);ctx.restore();
+  for(var i=0;i<5;i++){ctx.fillStyle=R.sv[i]?"#f2a33a":"#7b8794";ctx.beginPath();ctx.arc(R.sp[i][0],R.sp[i][1],3,0,7);ctx.fill()}
+  $("#s-read").textContent="error   "+(R.e>=0?"+":"")+R.e.toFixed(2)+"\nleft    "+Math.round(R.l)+"\nright   "+Math.round(R.r)+"\nsensors "+R.sv.map(function(v){return v?"●":"○"}).join(" ");
+ }
+ $("#s-kp").addEventListener("input",function(){$("#v-kp").textContent=this.value});
+ $("#s-base").addEventListener("input",function(){$("#v-base").textContent=this.value});
+ $("#s-reset").addEventListener("click",init);
+ var tok=simTok;
+ (function loop(){if(tok!==simTok||!$("#cv"))return;step();step();draw();simRaf=requestAnimationFrame(loop)})();
+}
+
+function simRover(b){
+ b.innerHTML='<div class="simgrid"><div class="simcv"><canvas id="cv2" width="640" height="360" aria-label="Obstacle rover simulation"></canvas></div>'+
+  '<div class="box"><h3>Controls</h3>'+
+  '<label class="f" for="s-thr">Turn away closer than: <b id="v-thr">20</b> cm<input id="s-thr" type="range" min="10" max="60" value="20"></label>'+
+  '<label class="f" for="s-spd">Speed: <b id="v-spd">2</b><input id="s-spd" type="range" min="1" max="4" value="2"></label>'+
+  '<div class="trow"><button class="btn ghost" id="s-rr" type="button">Restart rover</button><button class="btn ghost" id="s-clear" type="button">Clear obstacles</button></div>'+
+  '<div class="mono readout" id="s-read2"></div>'+
+  '<p class="muted" style="font-size:.86rem">Click the arena to drop an obstacle. The rover follows the same rule as the MicroPython code: stop, pivot away, drive on.</p>'+guideLink("obstacle-rover")+"</div></div>";
+ var cv=$("#cv2"),ctx=cv.getContext("2d"),W=640,H=360,obs,R,avoided;
+ function resetObs(){obs=[[150,110,34],[330,250,40],[470,100,30],[540,260,28],[230,300,22],[400,170,24]]}
+ function init(){R={x:70,y:180,th:0.3,st:"fwd",tm:0,d:220};avoided=0}
+ resetObs();init();
+ function ray(){
+  var maxD=220;
+  for(var d=0;d<=maxD;d+=2){
+   var x=R.x+Math.cos(R.th)*d,y=R.y+Math.sin(R.th)*d;
+   if(x<4||y<4||x>W-4||y>H-4)return d;
+   for(var i=0;i<obs.length;i++){var o=obs[i],dx=x-o[0],dy=y-o[1];if(dx*dx+dy*dy<o[2]*o[2])return d}
+  }
+  return maxD;
+ }
+ function step(){
+  var thr=+$("#s-thr").value*2,spd=+$("#s-spd").value;
+  R.d=ray();
+  if(R.st==="fwd"){if(R.d<thr){R.st="stop";R.tm=6}else{R.x+=Math.cos(R.th)*spd;R.y+=Math.sin(R.th)*spd}}
+  else if(R.st==="stop"){if(--R.tm<=0){R.st="turn";R.tm=27}}
+  else{R.th+=0.045;if(--R.tm<=0){R.st="fwd";avoided++}}
+  R.x=clamp(R.x,14,W-14);R.y=clamp(R.y,14,H-14);
+ }
+ function draw(){
+  ctx.fillStyle="#e9edf2";ctx.fillRect(0,0,W,H);
+  ctx.fillStyle="#58636f";obs.forEach(function(o){ctx.beginPath();ctx.arc(o[0],o[1],o[2],0,7);ctx.fill()});
+  ctx.strokeStyle="rgba(242,163,58,.85)";ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(R.x,R.y);ctx.lineTo(R.x+Math.cos(R.th)*R.d,R.y+Math.sin(R.th)*R.d);ctx.stroke();
+  ctx.save();ctx.translate(R.x,R.y);ctx.rotate(R.th);
+  ctx.fillStyle="#1b6a56";ctx.fillRect(-14,-11,28,22);ctx.fillStyle="#c4cdd7";ctx.beginPath();ctx.arc(14,-5,4,0,7);ctx.arc(14,5,4,0,7);ctx.fill();ctx.restore();
+  var cm=R.d>=220?"100+":Math.round(R.d/2);
+  $("#s-read2").textContent="distance "+cm+" cm\nstate    "+R.st+"\nturns    "+avoided;
+ }
+ $("#s-thr").addEventListener("input",function(){$("#v-thr").textContent=this.value});
+ $("#s-spd").addEventListener("input",function(){$("#v-spd").textContent=this.value});
+ $("#s-rr").addEventListener("click",init);
+ $("#s-clear").addEventListener("click",function(){obs=[]});
+ cv.style.cursor="crosshair";
+ cv.addEventListener("click",function(e){var r=cv.getBoundingClientRect(),k=W/r.width;obs.push([(e.clientX-r.left)*k,(e.clientY-r.top)*k,16+Math.random()*16])});
+ var tok=simTok;
+ (function loop(){if(tok!==simTok||!$("#cv2"))return;step();draw();simRaf=requestAnimationFrame(loop)})();
+}
+
+function simPlant(b){
+ b.innerHTML='<div class="simgrid"><div class="box"><h3>Plant pot</h3><div class="gauge" aria-hidden="true"><i id="g-fill"></i></div><div class="mono readout" id="p-read"></div><div class="lamp"><i id="pump-led"></i><span id="pump-txt">Pump off</span></div>'+guideLink("plant-monitor")+"</div>"+
+  '<div class="box"><h3>Controls</h3><label class="f" for="p-soil">Soil moisture: <b id="p-sv">20</b>%<input id="p-soil" type="range" min="0" max="100" value="20"></label>'+
+  '<label class="f" for="p-thr">Water when below: <b id="p-tv">30</b>%<input id="p-thr" type="range" min="5" max="70" value="30"></label>'+
+  '<h3>Serial monitor</h3><pre class="serial mono" id="p-log"></pre><p class="muted" style="font-size:.86rem">The soak wait is shortened to 6 seconds here. The real code waits 60.</p></div></div>';
+ var m=20,st="idle",tm=10,log=[],DRY=2800,WET=1200,soil=$("#p-soil");
+ soil.addEventListener("input",function(){m=+soil.value});
+ $("#p-thr").addEventListener("input",function(){$("#p-tv").textContent=this.value});
+ function say(t){log.push(t);if(log.length>8)log.shift();$("#p-log").textContent=log.join("\n")}
+ function paint(){
+  var raw=Math.round(DRY-m/100*(DRY-WET));
+  soil.value=m;$("#p-sv").textContent=Math.round(m);
+  $("#g-fill").style.width=m+"%";
+  $("#p-read").textContent="raw "+raw+"   moisture "+Math.round(m)+"%";
+  $("#pump-led").className=st==="pump"?"on":"";
+  $("#pump-txt").textContent=st==="pump"?"Pump on":st==="soak"?"Pump off, soaking":"Pump off";
+ }
+ paint();
+ simTimer=setInterval(function(){
+  if(!$("#p-soil")){simStop();return}
+  var thr=+$("#p-thr").value;
+  m=st==="pump"?Math.min(100,m+1.2):Math.max(0,m-0.05);
+  if(--tm<=0){
+   if(st==="idle"){say("Moisture: "+Math.round(m)+"%");if(m<thr){st="pump";tm=15;say("Pump on")}else tm=10}
+   else if(st==="pump"){st="soak";tm=30;say("Pump off, soaking")}
+   else{st="idle";tm=10}
+  }
+  paint();
+ },200);
+}
+
+function simNight(b){
+ b.innerHTML='<div class="simgrid"><div class="room" id="room"><div class="bulb" id="bulb"></div><div class="mono readout rd" id="n-read"></div></div>'+
+  '<div class="box"><h3>Controls</h3><label class="f" for="n-light">Room brightness: <b id="n-v">60</b>%<input id="n-light" type="range" min="0" max="100" value="60"></label>'+
+  '<p class="muted" style="font-size:.86rem">The light sensor reads high in the dark. The code maps that reading to LED brightness, so the lamp fades on as the room gets darker.</p>'+guideLink("auto-night-light")+"</div></div>";
+ var DARK=3200,BRIGHT=800,room=$("#room"),bulb=$("#bulb");
+ function upd(){
+  var pct=+$("#n-light").value,raw=Math.round(DARK-(pct/100)*(DARK-BRIGHT)),level=clamp(Math.round((raw-BRIGHT)/(DARK-BRIGHT)*255),0,255),f=level/255,bg=Math.round(14+pct*1.9);
+  room.style.background="rgb("+bg+","+(bg+6)+","+(bg+14)+")";
+  bulb.style.opacity=(0.15+f*0.85).toFixed(2);
+  bulb.style.boxShadow="0 0 "+Math.round(f*60)+"px "+Math.round(f*24)+"px rgba(255,200,90,"+(f*0.7).toFixed(2)+")";
+  $("#n-read").textContent="raw "+raw+"   level "+level+"/255";
+  $("#n-v").textContent=pct;
+ }
+ $("#n-light").addEventListener("input",upd);upd();
+}
+
+function simAlarm(b){
+ b.innerHTML='<div class="simgrid"><div class="box"><h3>PIR sensor</h3><div class="mono readout" id="a-state"></div><div class="progress" aria-hidden="true"><i id="a-bar"></i></div>'+
+  '<div class="trow"><button class="btn ghost" id="a-skip" type="button">Skip warm-up</button><button class="btn" id="a-walk" type="button" disabled>Someone walks in</button></div>'+guideLink("motion-alarm")+"</div>"+
+  '<div class="box"><h3>Outputs</h3><div class="lamps"><div class="lamp"><i id="a-led"></i><span>LED</span></div><div class="lamp"><i id="a-buz"></i><span id="a-buzt">Buzzer silent</span></div></div><h3>Serial monitor</h3><pre class="serial mono" id="a-log"></pre></div></div>';
+ var warm=300,pulse=0,log=[];
+ function say(t){log.push(t);if(log.length>8)log.shift();$("#a-log").textContent=log.join("\n")}
+ say("Warming up PIR sensor");
+ $("#a-skip").addEventListener("click",function(){warm=0});
+ $("#a-walk").addEventListener("click",function(){if(warm===0&&pulse===0){pulse=24;say("Motion detected")}});
+ simTimer=setInterval(function(){
+  if(!$("#a-state")){simStop();return}
+  if(warm>0){warm--;if(warm===0)say("Ready")}
+  var on=false;
+  if(pulse>0){pulse--;on=((24-pulse-1)%4)<2;if(pulse===0)say("Alarm finished")}
+  $("#a-bar").style.width=((300-warm)/3)+"%";
+  $("#a-state").textContent=warm>0?"Warming up: "+Math.ceil(warm/10)+" s left":(pulse>0?"Motion detected":"Watching for motion");
+  $("#a-walk").disabled=warm>0||pulse>0;
+  $("#a-led").className=on?"on":"";$("#a-buz").className=on?"on":"";
+  $("#a-buzt").textContent=on?"BEEP":"Buzzer silent";
+ },100);
+}
+
+var own={name:"My project",q:{}};
+function simOwn(b){
+ var cats=CATS.filter(function(c){return c!=="All"&&c!=="Kits"});
+ b.innerHTML='<div class="owngrid"><div class="box form"><label class="f" for="o-name">Project name<input id="o-name" value="'+attr(own.name)+'"></label><p class="muted" style="font-size:.9rem">Pick the parts your project needs and set a quantity for each. The total updates as you go.</p>'+
+  cats.map(function(cat){return '<div class="ogrp"><span class="cat">'+esc(cat)+"</span>"+PRODUCTS.filter(function(p){return p.cat===cat}).map(function(p){return '<div class="orow"><span class="nmx"><i class="th">'+partArt(p.id)+"</i><span>"+esc(p.name)+' <small class="muted mono">'+money(p.price)+'</small></span></span><input class="oq" data-oid="'+attr(p.id)+'" id="o-'+attr(p.id)+'" type="number" min="0" max="20" value="'+(own.q[p.id]||0)+'" aria-label="Quantity of '+attr(p.name)+'"></div>'}).join("")+"</div>"}).join("")+
+  '</div><div style="display:flex;flex-direction:column;gap:18px"><div class="box" id="o-sum"></div><div class="box"><h3>Simulate the circuit</h3><p class="muted" style="font-size:.9rem">For full circuit simulation with wiring and code, use a free online simulator.</p><div class="trow"><a class="btn ghost sm" href="https://wokwi.com/" target="_blank" rel="noopener noreferrer">Open Wokwi</a><a class="btn ghost sm" href="https://www.tinkercad.com/circuits" target="_blank" rel="noopener noreferrer">Open Tinkercad Circuits</a></div></div><div class="box" id="o-mine"></div></div></div>';
+ function picked(){return PRODUCTS.filter(function(p){return own.q[p.id]>0})}
+ function sum(){
+  var list=picked(),tot=list.reduce(function(s,p){return s+p.price*own.q[p.id]},0);
+  $("#o-sum").innerHTML="<h3>"+esc(own.name||"My project")+"</h3>"+(list.length?'<div class="bom">'+list.map(function(p){return '<div class="r"><span>'+esc(p.name)+'</span><span class="q">x'+own.q[p.id]+'</span><span class="p">'+money(p.price*own.q[p.id])+"</span></div>"}).join("")+'<div class="r tot"><span>Total</span><span></span><span class="p">'+money(tot)+"</span></div></div>":'<p class="muted">No parts yet.</p>')+
+   '<div class="trow"><button class="btn" id="o-add" type="button"'+(list.length?"":" disabled")+'>Add all to cart</button><button class="btn ghost" id="o-save" type="button"'+(list.length?"":" disabled")+'>Save project</button><button class="btn ghost" id="o-clear" type="button">Clear</button></div>';
+ }
+ function mine(){
+  var l=LS.get("bl-mine")||[];
+  $("#o-mine").innerHTML="<h3>My saved projects</h3>"+(l.length?l.map(function(m,i){return '<div class="orow"><span>'+esc(m.name)+'</span><span class="trow"><button class="btn ghost sm" data-mload="'+i+'" type="button">Load</button><button class="btn ghost sm" data-madd="'+i+'" type="button">Add to cart</button><button class="btn ghost sm" data-mdel="'+i+'" type="button">Delete</button></span></div>'}).join(""):'<p class="muted">Nothing saved yet. Projects are saved in this browser.</p>');
+ }
+ sum();mine();
+ b.oninput=function(e){
+  var t=e.target;
+  if(t.classList.contains("oq")){var v=clamp(parseInt(t.value,10)||0,0,20);if(v)own.q[t.dataset.oid]=v;else delete own.q[t.dataset.oid];sum()}
+  else if(t.id==="o-name"){own.name=t.value;sum()}
+ };
+ b.onclick=function(e){
+  var t=e.target.closest("button");if(!t)return;
+  var l=LS.get("bl-mine")||[];
+  if(t.id==="o-add"){picked().forEach(function(p){add(p.id,own.q[p.id])});toast("Parts added to cart")}
+  else if(t.id==="o-save"){l.unshift({name:own.name||"My project",q:JSON.parse(JSON.stringify(own.q))});LS.set("bl-mine",l.slice(0,20));mine();toast("Project saved in this browser")}
+  else if(t.id==="o-clear"){own.q={};showSim("own")}
+  else if(t.dataset.mload!==undefined){var m=l[+t.dataset.mload];if(m){own.name=m.name;own.q=m.q;showSim("own")}}
+  else if(t.dataset.madd!==undefined){var m2=l[+t.dataset.madd];if(m2){Object.keys(m2.q).forEach(function(id){if(X[id])add(id,m2.q[id])});toast("Parts added to cart")}}
+  else if(t.dataset.mdel!==undefined){l.splice(+t.dataset.mdel,1);LS.set("bl-mine",l);mine()}
+ };
+}
+
+/* ---------- shared pieces ---------- */
+var isAdmin=false;
+try{isAdmin=sessionStorage.getItem("bl-admin")==="1"}catch(e){}
+function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
+function attr(s){return String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;")}
+function slug(s){return String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"")||"item"}
+function safeUrl(u){u=String(u||"").trim();return /^https?:\/\//i.test(u)?u:""}
+function uniqueId(arr,base){var id=base,n=2;while(arr.some(function(i){return i.id===id}))id=base+"-"+(n++);return id}
+var PEN='<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>';
+function pen(coll,id,inl){return isAdmin?'<button type="button" class="pen'+(inl?" inl":"")+'" data-edit="'+coll+":"+attr(id)+'" aria-label="Edit">'+PEN+"</button>":""}
+function plus(coll,label){return isAdmin?'<button type="button" class="plus" data-new="'+coll+'"><b>+</b> '+label+"</button>":""}
+function partsOf(p){return (p.parts||[]).filter(function(pt){return X[pt[0]]})}
+function partIds(p){return partsOf(p).slice(0,3).map(function(a){return a[0]})}
+function videosOf(p){return (p.videos||[]).filter(function(v){return safeUrl(v.u)})}
+function bomRows(p){
+ return partsOf(p).map(function(pt){var x=X[pt[0]];return '<div class="r"><span class="nmx"><i class="th">'+partArt(pt[0])+"</i><span>"+esc(x.name)+'</span></span><span class="q">x'+pt[1]+'</span><span class="p">'+money(x.price*pt[1])+"</span></div>"}).join("");
+}
+function bomTotal(p){return partsOf(p).reduce(function(s,pt){return s+X[pt[0]].price*pt[1]},0)}
+function chips(list,group){
+ return '<div class="chips" role="group" aria-label="'+group+'">'+list.map(function(c,i){return '<button type="button" class="chip" data-chip="'+attr(c)+'" aria-pressed="'+(i===0)+'">'+esc(c)+"</button>"}).join("")+"</div>";
+}
+function projCard(p){
+ return '<div class="cw" data-cat="'+attr(p.type)+'" data-name="'+attr((p.name+" "+p.board+" "+p.blurb).toLowerCase())+'"><a class="pcard" href="#p-'+attr(p.id)+'"><div class="art">'+traceArt(p.id)+multiArt(partIds(p))+'<span class="tag">'+esc(p.type)+'</span></div><div class="pbody"><h3>'+esc(p.name)+"</h3><p>"+esc(p.blurb)+'</p><div class="meta"><span>'+esc(p.level)+"</span><span>"+esc(p.time)+"</span><span>"+esc(p.board)+"</span>"+(videosOf(p).length?"<span>Video</span>":"")+"</div></div></a>"+pen("projects",p.id)+"</div>";
+}
+function prodCard(x){
+ return '<div class="cw" data-cat="'+attr(x.cat)+'" data-name="'+attr((x.name+" "+x.note).toLowerCase())+'"><article class="item"><div class="art">'+traceArt(x.id,240,120)+(x.cat==="Kits"?kitArt(x.id):partArt(x.id))+'</div><div class="ibody"><span class="cat">'+esc(x.cat)+"</span><h3>"+esc(x.name)+"</h3><p>"+esc(x.note)+'</p><div class="buy"><b class="price">'+money(x.price)+'</b><button class="btn sm" data-add="'+attr(x.id)+'">Add to cart</button></div></div></article>'+pen("products",x.id)+"</div>";
+}
+function swCard(s){
+ var u=safeUrl(s.url);
+ return '<div class="cw"><article class="sw"><div class="top2"><h3>'+esc(s.n)+'</h3><span class="pill">'+esc(s.v)+"</span></div><p>"+esc(s.d)+'</p><div class="meta"><span>'+esc(s.os)+"</span></div><div>"+(u?'<a class="btn sm" href="'+attr(u)+'" target="_blank" rel="noopener noreferrer">Download</a>':'<button class="btn sm ghost" data-dl="'+attr(s.n)+'">Notify me</button>')+"</div></article>"+pen("software",s.id)+"</div>";
+}
+function avatar(cls){
+ var init=String(FOUNDER.name||"B").trim().split(/\s+/).map(function(w){return w.charAt(0)}).join("").slice(0,2).toUpperCase();
+ return '<div class="avatar '+(cls||"")+'" aria-hidden="true">'+traceArt("founder",200,200)+"<b>"+esc(init)+"</b></div>";
+}
+function paras(t){return String(t||"").split(/\n\s*\n/).filter(function(x){return x.trim()}).map(function(x){return "<p>"+esc(x.trim())+"</p>"}).join("")}
+function cofounderAvatar(cls){var init=String(COFOUNDER.name||"C").trim().split(/\s+/).map(function(w){return w.charAt(0)}).join("").slice(0,2).toUpperCase();return '<div class="avatar '+(cls||'')+'" aria-hidden="true">'+traceArt("cofounder",200,200)+'<b>'+esc(init)+'</b></div>'}
+function cofounderView(){return '<section class="wrap pg"><div class="fhead">'+cofounderAvatar()+'<div class="ph" style="flex:1;min-width:240px"><span class="eyebrow">The co-founder</span><div class="hrow"><h1>'+esc(COFOUNDER.name)+'</h1>'+pen("cofounder","me",true)+'</div><p>'+esc(COFOUNDER.role)+'</p></div></div><div class="bio">'+paras(COFOUNDER.bio)+'</div><div class="cta" style="margin:0"><a class="btn" href="#projects">See the projects</a><a class="btn ghost" href="#shop">Shop materials</a></div></section>'}
+
+
+/* ---------- views ---------- */
+function home(){
+ var hp=P["line-follower"]||PROJECTS[0],first=String(FOUNDER.bio||"").split(/\n\s*\n/)[0];
+ var sheet=hp?'<div class="sheet"><div class="art">'+traceArt("sheet-hero",420,160)+multiArt(partIds(hp))+'</div><div class="in"><div><span class="eyebrow">Project sheet</span><h3 style="margin-top:8px">'+esc(hp.name)+'</h3></div><div class="kv"><span>'+esc(hp.level)+"</span><span>"+esc(hp.time)+"</span><span>"+esc(hp.board)+"</span><span>"+esc(hp.lang)+'</span></div><div class="bom">'+bomRows(hp)+'<div class="r tot"><span>Parts total</span><span></span><span class="p">'+money(bomTotal(hp))+'</span></div></div><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" data-addall="'+attr(hp.id)+'">Add all parts</button><a class="btn ghost" href="#p-'+attr(hp.id)+'">View guide and code</a></div></div></div>':"";
+ return '<section class="hero"><div class="wrap"><div class="grid"><div>'+
+  '<span class="eyebrow">Electronics and robotics, start to finish</span>'+
+  "<h1>Build the project. Get the code. Order the parts.</h1>"+
+  '<p class="lead">BUILD X gives you step-by-step builds, the full source code, the software to flash it, and every component in one cart.</p>'+
+  '<div class="cta"><a class="btn" href="#projects">Browse projects</a><a class="btn ghost" href="#simulate">Try the simulator</a></div>'+
+  "</div>"+sheet+"</div></div></section>"+
+  '<section class="band"><div class="wrap sec"><div class="fband">'+avatar("sm")+'<div style="min-width:0;flex:1;display:flex;flex-direction:column;gap:6px"><span class="eyebrow">Meet the founder</span><h3>'+esc(FOUNDER.name)+'</h3><p class="muted" style="max-width:62ch">'+esc(first)+'</p></div><a class="btn ghost sm" href="#founder">Read more</a></div></div></section>'+
+  '<section class="band"><div class="wrap sec"><div class="fband">'+cofounderAvatar("sm")+'<div style="min-width:0;flex:1;display:flex;flex-direction:column;gap:6px"><span class="eyebrow">Meet the co-founder</span><h3>'+esc(COFOUNDER.name)+'</h3><p class="muted" style="max-width:62ch">'+esc(String(COFOUNDER.bio||"").split(/\n\s*\n/)[0])+'</p></div><a class="btn ghost sm" href="#cofounder">Read more</a></div></div></section>'+
+  '<section class="band"><div class="wrap sec"><div class="sec-h"><div><h2>How a build works</h2><p>Every project follows the same path, so you always know what comes next.</p></div></div><div class="three">'+
+  '<div class="step"><span class="eyebrow">Guide</span><h3>Follow the steps</h3><p>Wiring, calibration and testing, written in the order you do them.</p></div>'+
+  '<div class="step"><span class="eyebrow">Code</span><h3>Copy the full source</h3><p>Complete code with the libraries each project needs.</p></div>'+
+  '<div class="step"><span class="eyebrow">Simulate</span><h3>Test the logic first</h3><p>Run robots and sensors in your browser before you buy anything.</p></div>'+
+  '<div class="step"><span class="eyebrow">Parts</span><h3>Order everything at once</h3><p>One button adds the whole parts list to your cart. Or buy the kit.</p></div>'+
+  "</div></div></section>"+
+  '<section class="band"><div class="wrap sec"><div class="sec-h"><div><h2>Featured projects</h2></div><a class="btn ghost sm" href="#projects">All projects</a></div><div class="grid3">'+PROJECTS.slice(0,3).map(projCard).join("")+"</div></div></section>"+
+  '<section class="band"><div class="wrap sec"><div class="sec-h"><div><h2>Software that goes with the builds</h2><p>Code editors, flashing tools and 3D printing software, all linked to the official downloads.</p></div><a class="btn ghost sm" href="#software">See software</a></div><div class="grid3">'+SOFTWARE.slice(0,3).map(swCard).join("")+"</div></div></section>"+
+  '<section class="band"><div class="wrap sec"><div class="three">'+
+  '<div class="step"><span class="eyebrow">Shipping</span><h3>Free standard shipping over '+money(FREE_SHIP)+"</h3><p>Express available for 1 to 2 day delivery.</p></div>"+
+  '<div class="step"><span class="eyebrow">Open code</span><h3>Every project is copy-ready</h3><p>Read the full source on the page. No account needed.</p></div>'+
+  '<div class="step"><span class="eyebrow">Returns</span><h3>30-day returns on unused parts</h3><p>Damaged or missing items are replaced at no cost.</p></div>'+
+  "</div></div></section>";
+}
+function embedFor(v){
+ v=String(v||"").trim();if(!v)return "";
+ var yt=v.match(/(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+ if(yt)return '<div class="vwrap"><iframe src="https://www.youtube-nocookie.com/embed/'+yt[1]+'" title="Founder video" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div><p class="muted" style="font-size:.88rem"><a href="https://www.youtube.com/watch?v='+yt[1]+'" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">Open on YouTube</a></p>';
+ if(/^(https:\/\/|blob:|media\/[A-Za-z0-9._-]+$)/i.test(v))return '<div class="vwrap"><video controls playsinline preload="metadata" src="'+attr(v)+'"></video></div>';
+ return "";
+}
+function founderView(){
+ var vid=embedFor(pendingVideo?pendingVideo.url:FOUNDER.video),words=paras(FOUNDER.words);
+ var words_sec=(vid||words||isAdmin)?'<div class="sect"><h2>Founder\'s words</h2>'+vid+(words?'<div class="bio">'+words+'</div>':"")+((!vid&&!words)?'<p class="muted">Nothing here yet. Add a video from the Admin page and a written message with the pencil above.</p>':"")+'</div>':"";
+ return '<section class="wrap pg"><div class="fhead">'+avatar()+'<div class="ph" style="flex:1;min-width:240px"><span class="eyebrow">The founder</span><div class="hrow"><h1>'+esc(FOUNDER.name)+"</h1>"+pen("founder","me",true)+'</div><p>'+esc(FOUNDER.role)+'</p></div></div><div class="bio">'+paras(FOUNDER.bio)+'</div>'+words_sec+'<div class="cta" style="margin:0"><a class="btn" href="#projects">See the projects</a><a class="btn ghost" href="#shop">Shop materials</a></div></section>';
+}
+function projectsView(){
+ return '<section class="wrap pg"><div class="ph"><span class="eyebrow">Projects</span><h1>Pick a build</h1><p>Each guide includes the wiring, the full code and a parts list you can order in one click.</p></div>'+
+  '<div class="filterable"><div class="tools">'+chips(["All","Electronics","Robotics"],"Project type")+'<div class="trow">'+plus("projects","Add project")+'<input class="search" id="proj-q" type="search" placeholder="Search projects or boards" aria-label="Search projects"></div></div>'+
+  '<div class="grid3" style="margin-top:24px">'+PROJECTS.map(projCard).join("")+'</div><div class="empty" id="none" hidden>No projects match. Try a different search.</div></div></section>';
+}
+function projectView(p){
+ var kit=X[p.kit],vids=videosOf(p),libs=(p.libs||[]).filter(Boolean);
+ var vhtml=vids.length?'<div class="sect"><h2>Video tutorials</h2><div class="vlist">'+vids.map(function(v){return '<a class="vid" href="'+attr(safeUrl(v.u))+'" target="_blank" rel="noopener noreferrer"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span><b>'+esc(v.t||"Video tutorial")+'</b><small class="muted">Opens in a new tab</small></span></a>'}).join("")+"</div></div>":(isAdmin?'<div class="sect"><h2>Video tutorials</h2><p class="muted">No video yet. Click the pencil at the top of the page to add one.</p></div>':"");
+ var lhtml=libs.length?'<div class="sect"><h2>Libraries</h2><div class="libs">'+libs.map(function(l){return '<span class="pill">'+esc(l)+"</span>"}).join("")+'</div><p class="muted" style="font-size:.88rem">Install these before you upload. The <a href="#code" style="text-decoration:underline">Code page</a> explains how.</p></div>':"";
+ var kitHtml=kit?'<div class="kit"><span class="cat">Or get the kit</span><b>'+esc(kit.name)+'</b><span class="muted">'+esc(kit.note)+'</span><div class="buy"><b class="price">'+money(kit.price)+'</b><button class="btn ghost sm" data-add="'+attr(kit.id)+'">Add kit</button></div></div>':"";
+ return '<section class="wrap pg"><div class="ph"><div class="crumb"><a href="#projects">Projects</a> / '+esc(p.name)+'</div><div class="hrow"><h1>'+esc(p.name)+"</h1>"+pen("projects",p.id,true)+"</div><p>"+esc(p.blurb)+'</p><div class="kv"><span>'+esc(p.type)+"</span><span>"+esc(p.level)+"</span><span>"+esc(p.time)+"</span><span>"+esc(p.board)+"</span><span>"+esc(p.lang)+"</span></div></div>"+
+  '<div class="cols"><div class="main">'+
+  '<div class="sect"><h2>Build steps</h2><ol class="steps">'+(p.steps||[]).map(function(s){return "<li><div><h3>"+esc(s[0])+"</h3>"+(s[1]?"<p>"+esc(s[1])+"</p>":"")+"</div></li>"}).join("")+"</ol></div>"+
+  vhtml+lhtml+
+  '<div class="sect"><h2>Full code</h2><div class="code"><div class="hd"><span>'+esc(p.file)+" &middot; "+esc(p.lang)+'</span><button class="btn ghost sm" data-copy="p-'+attr(p.id)+'">Copy code</button></div><pre translate="no" id="code-p-'+attr(p.id)+'"><code>'+esc(p.code)+"</code></pre></div></div>"+
+  '<div class="sect"><h2>Code package</h2><div class="files">'+[p.file,"wiring-diagram.pdf","parts-list.csv","README.md"].map(function(f){return '<div class="r"><span>'+esc(f)+'</span><span class="muted">included</span></div>'}).join("")+'</div><div><button class="btn" data-dl="'+attr(p.id)+'">Download package (.zip)</button></div></div>'+
+  '</div><aside class="side"><h3>Parts for this build</h3><div class="bom">'+bomRows(p)+'<div class="r tot"><span>Total</span><span></span><span class="p">'+money(bomTotal(p))+'</span></div></div><button class="btn block" data-addall="'+attr(p.id)+'">Add all parts to cart</button>'+kitHtml+'<a class="btn ghost block" href="#simulate">Open the simulator</a></aside></div></section>';
+}
+function codeEntries(){
+ var a=PROJECTS.map(function(p){return {id:"p-"+p.id,coll:"projects",rid:p.id,title:p.name,board:p.board,lang:p.lang,libs:p.libs||[],desc:p.blurb,code:p.code,file:p.file}});
+ var b=CODES.map(function(c){return {id:"c-"+c.id,coll:"codes",rid:c.id,title:c.title,board:c.board,lang:c.lang,libs:c.libs||[],desc:c.desc,code:c.code,file:c.file||""}});
+ return a.concat(b);
+}
+function codeEntry(c){
+ var libs=(c.libs||[]).filter(Boolean).map(function(l){return '<span class="pill">'+esc(l)+"</span>"}).join("");
+ return '<div class="cw ce" data-cat="'+attr(c.lang)+'" data-name="'+attr((c.title+" "+c.board+" "+c.desc+" "+(c.libs||[]).join(" ")).toLowerCase())+'"><details><summary><span class="ct">'+esc(c.title)+'<small class="mono muted">'+esc(c.board)+" &middot; "+esc(c.lang)+'</small></span></summary><div class="cbody"><p class="muted">'+esc(c.desc)+'</p><div class="libs"><span class="cat">Libraries</span>'+(libs||'<span class="muted">None needed</span>')+'</div><div class="code"><div class="hd"><span>'+esc(c.file||"code")+'</span><button class="btn ghost sm" data-copy="'+attr(c.id)+'">Copy code</button></div><pre translate="no" id="code-'+attr(c.id)+'"><code>'+esc(c.code)+"</code></pre></div></div></details>"+pen(c.coll,c.rid)+"</div>";
+}
+function codeView(){
+ var es=codeEntries(),langs=["All"];
+ es.forEach(function(c){if(langs.indexOf(c.lang)<0)langs.push(c.lang)});
+ return '<section class="wrap pg"><div class="ph"><span class="eyebrow">Code</span><h1>Code library</h1><p>Complete sketches and scripts with the libraries each one needs. Open an entry, install the listed libraries, then copy the code.</p></div>'+
+  '<div class="note"><b>Arduino IDE:</b> install libraries from Sketch, Include Library, Manage Libraries. <b>ESP32 and Pico:</b> add the board package in Boards Manager. <b>Raspberry Pi:</b> libraries marked preinstalled ship with Raspberry Pi OS.</div>'+
+  '<div class="filterable"><div class="tools">'+chips(langs,"Language")+'<div class="trow">'+plus("codes","Add code")+'<input class="search" id="code-q" type="search" placeholder="Search code" aria-label="Search code"></div></div>'+
+  '<div class="clist" style="margin-top:24px">'+es.map(codeEntry).join("")+'</div><div class="empty" id="none" hidden>No code matches. Try a different search.</div></div></section>';
+}
+function softwareView(){
+ var groups=[],order=["Coding","3D printing","BUILD X tools"];
+ SOFTWARE.forEach(function(s){if(groups.indexOf(s.group)<0)groups.push(s.group)});
+ groups.sort(function(a,b){var i=order.indexOf(a),j=order.indexOf(b);return (i<0?9:i)-(j<0?9:j)});
+ return '<section class="wrap pg"><div class="ph"><span class="eyebrow">Software</span><h1>Tools for your builds</h1><p>Code editors, flashing tools and 3D printing software. Each Download button opens the official page for that program.</p></div><div>'+plus("software","Add software")+"</div>"+
+  groups.map(function(g){return '<div class="sect"><h2>'+esc(g)+'</h2><div class="grid3">'+SOFTWARE.filter(function(s){return s.group===g}).map(swCard).join("")+"</div></div>"}).join("")+
+  '<div class="note"><b>Per-project code</b> is on each <a href="#projects" style="text-decoration:underline">project page</a> and in the <a href="#code" style="text-decoration:underline">code library</a>. Third-party programs have their own licenses.</div></section>';
+}
+function shopView(){
+ return '<section class="wrap pg"><div class="ph"><span class="eyebrow">Shop</span><h1>Materials</h1><p>Boards, sensors, motors, power and tools. Or grab a complete kit for a project. Prices are shown in your local currency.</p></div>'+
+  '<div class="filterable"><div class="tools">'+chips(CATS,"Category")+'<div class="trow">'+plus("products","Add product")+'<input class="search" id="shop-q" type="search" placeholder="Search parts" aria-label="Search parts"></div></div>'+
+  '<div class="grid3" style="margin-top:24px">'+PRODUCTS.map(prodCard).join("")+'</div><div class="empty" id="none" hidden>No parts match. Try a different search.</div></div></section>';
+}
+function cartView(){return '<section class="wrap pg"><h1>Your cart</h1><div id="cartwrap"></div></section>'}
+function cartLayout(){
+ return '<div class="cartgrid"><div class="lines" id="lines"></div><div style="display:flex;flex-direction:column;gap:18px">'+
+  '<div class="box" id="sum"></div>'+
+  '<form class="box form" id="checkout" novalidate><h3>Delivery details</h3>'+
+  '<label class="f" for="c-name">Full name<input id="c-name" autocomplete="name" required></label>'+
+  '<label class="f" for="c-email">Email<input id="c-email" type="email" autocomplete="email" required></label>'+
+  '<label class="f" for="c-addr">Address<textarea id="c-addr" rows="3" autocomplete="street-address" required></textarea></label>'+
+  '<button class="btn block" type="button" data-submit="checkout">Send purchase request</button><p class="muted" id="chk-msg" style="font-size:.86rem"></p></form></div></div>';
+}
+function renderCart(){
+ var wrap=$("#cartwrap");if(!wrap)return;
+ var ids=cartIds();
+ if(!ids.length){wrap.innerHTML='<div class="empty"><p>Your cart is empty.</p><a class="btn" href="#shop">Browse materials</a></div>';return}
+ if(!$("#lines"))wrap.innerHTML=cartLayout();
+ $("#lines").innerHTML=ids.map(function(id){var x=X[id];
+  return '<div class="line"><div class="nm"><b>'+esc(x.name)+"</b><small>"+money(x.price)+' each</small><button class="rm" data-rm="'+attr(id)+'">Remove</button></div><div class="qty"><button data-qty="'+attr(id)+':-1" aria-label="Decrease">-</button><span>'+cart[id]+'</span><button data-qty="'+attr(id)+':1" aria-label="Increase">+</button></div><b class="price lp">'+money(x.price*cart[id])+"</b></div>"}).join("");
+ var sub=subtotal();
+ var ship=(shipSel==="standard"&&sub>=FREE_SHIP)?0:SHIP[shipSel].p;
+ var hint=(shipSel==="standard"&&sub<FREE_SHIP)?'<p class="muted" style="font-size:.86rem">Add '+money(FREE_SHIP-sub)+" more for free standard shipping.</p>":"";
+ $("#sum").innerHTML="<h3>Order summary</h3>"+
+  Object.keys(SHIP).map(function(k){var s=SHIP[k];var price=(k==="standard"&&sub>=FREE_SHIP)?"Free":money(s.p);
+   return '<label class="opt"><input type="radio" name="ship" id="ship-'+k+'" value="'+k+'"'+(shipSel===k?" checked":"")+"><span>"+s.n+"<small>"+s.d+'</small></span><b class="mono">'+price+"</b></label>"}).join("")+hint+
+  '<dl class="tot"><div><dt>Subtotal</dt><dd>'+money(sub)+"</dd></div><div><dt>Shipping</dt><dd>"+(ship===0?"Free":money(ship))+'</dd></div><div class="grand"><dt>Total</dt><dd>'+money(sub+ship)+"</dd></div></dl>"+
+  '<p class="muted" style="font-size:.8rem">Shown in '+curInfo()[1]+' at approximate rates.</p>';
+}
+function shippingView(){
+ return '<section class="wrap pg"><div class="ph"><span class="eyebrow">Shipping and returns</span><h1>Delivery you can plan around</h1><p>Orders over '+money(FREE_SHIP)+' ship free by standard delivery. Most orders leave within one business day.</p></div>'+
+  '<div class="tblw"><table><tr><th>Method</th><th>Delivery time</th><th>Cost</th></tr>'+
+  '<tr><td>Standard</td><td>3 to 6 business days</td><td class="n">'+money(SHIP.standard.p)+" (free over "+money(FREE_SHIP)+")</td></tr>"+
+  '<tr><td>Express</td><td>1 to 2 business days</td><td class="n">'+money(SHIP.express.p)+"</td></tr>"+
+  '<tr><td>International</td><td>7 to 14 business days</td><td class="n">Calculated at checkout</td></tr></table></div>'+
+  '<div class="twoc"><div class="step"><h3>Returns</h3><p>Return unused parts within 30 days for a refund to your original payment method. Return instructions will be added here.</p></div>'+
+  '<div class="step"><h3>Batteries</h3><p>Battery holders ship without cells. Lithium cells are restricted on some routes and are sold separately where allowed.</p></div>'+
+  '<div class="step"><h3>Customs and duties</h3><p>International orders may be charged import duties by your local customs office. These are not included in our prices.</p></div></div>'+
+  '<div class="note">Sample terms. Replace the times, prices and policies with your own before launch.</div></section>';
+}
+function detectRepo(){var m=location.hostname.match(/^([^.]+)\.github\.io$/);return m?{owner:m[1],repo:(location.pathname.split("/")[1]||m[1]+".github.io")}:{}}
+function adminView(){
+ if(!isAdmin){
+  return '<section class="wrap pg"><div class="ph"><span class="eyebrow">Admin</span><h1>Sign in</h1><p>For the site owner. After you sign in, every page shows a plus button to add things and a pencil on each item to edit it.</p></div>'+
+   '<form class="box form" id="adminlogin" style="max-width:420px" novalidate><label class="f" for="a-user">Username<input id="a-user" autocomplete="username" autocapitalize="off"></label><label class="f" for="a-pass">Password<input id="a-pass" type="password" autocomplete="current-password"></label><button class="btn" type="button" id="a-go" data-submit="adminlogin">Sign in</button><p class="err" id="a-err" role="alert"></p></form></section>';
+ }
+ var g=LS.get("bl-gh")||{},d=detectRepo(),em=SETTINGS.emailjs||{},tok="";
+ try{tok=sessionStorage.getItem("bl-ghtok")||""}catch(e){}
+ var fv=(FOUNDER.video&&!/^media\//.test(FOUNDER.video))?FOUNDER.video:"";
+ return '<section class="wrap pg"><div class="ph"><span class="eyebrow">Admin</span><h1>You are signed in</h1><p>Browse the site and use the plus buttons to add and the pencil buttons to edit. Your edits are saved in this browser and restored when you sign in again. Publish changes to make them permanent for all visitors.</p></div>'+
+  '<div class="sect"><h2>Add something</h2><div class="trow">'+plus("projects","Project")+plus("products","Product")+plus("software","Software")+plus("codes","Code entry")+'<button type="button" class="plus" data-edit="founder:me">'+PEN+' Founder profile</button><button type="button" class="plus" data-edit="cofounder:me">'+PEN+' Co-Founder profile</button></div></div>'+
+  '<div class="sect"><h2>Founder\'s words video</h2><div class="box form" style="max-width:640px">'+
+  '<label class="f" for="fv-file">Upload a video (MP4 or WebM, up to 20 MB)<input id="fv-file" type="file" accept="video/mp4,video/webm"></label>'+
+  '<label class="f" for="fv-url">Or paste a YouTube link or a direct video link<input id="fv-url" type="text" value="'+attr(fv)+'" placeholder="https://www.youtube.com/watch?v=..."></label>'+
+  '<div class="trow"><button class="btn" type="button" data-act="fv-save">Use this link</button><a class="btn ghost" href="#founder">Preview on Founder page</a><button class="btn ghost danger" type="button" data-act="fv-clear">Remove video</button></div>'+
+  '<p class="muted" id="fv-msg" role="status" style="font-size:.88rem">Larger videos work best as a YouTube link. The written message is edited with the pencil on the Founder page.</p></div></div>'+
+  '<div class="sect"><h2>Publish to everyone</h2><div class="box form" style="max-width:640px">'+
+  '<p class="muted" style="font-size:.92rem">Publishing saves your edits and video into your GitHub repository. The live site shows them to every visitor about a minute later. The token below is kept only until you close this tab.</p>'+
+  '<div class="row2"><label class="f" for="gh-owner">GitHub username<input id="gh-owner" value="'+attr(g.owner||d.owner||"")+'" autocomplete="off"></label><label class="f" for="gh-repo">Repository name<input id="gh-repo" value="'+attr(g.repo||d.repo||"")+'" autocomplete="off"></label></div>'+
+  '<div class="row2"><label class="f" for="gh-branch">Branch<input id="gh-branch" value="'+attr(g.branch||"main")+'" autocomplete="off"></label><label class="f" for="gh-token">Access token<input id="gh-token" type="password" value="'+attr(tok)+'" autocomplete="off"></label></div>'+
+  '<div class="trow"><button class="btn" type="button" id="pub-go" data-act="publish">Publish changes</button></div>'+
+  '<p class="muted" id="pub-msg" role="status" style="font-size:.88rem"></p></div></div>'+
+  '<div class="sect"><h2>Email notifications</h2><div class="box form" style="max-width:640px">'+
+  '<p class="muted" style="font-size:.92rem">Configure the visitor welcome email and the separate pre-payment order alert. The order alert is sent to samaryan.p@gmail.com when a customer submits the purchase request. These EmailJS identifiers are public values and are saved with your content when you publish.</p>'+
+  '<label class="f" for="em-key">Public key<input id="em-key" value="'+attr(em.publicKey||"")+'" autocomplete="off"></label>'+
+  '<div class="row2"><label class="f" for="em-svc">Service ID<input id="em-svc" value="'+attr(em.serviceId||"")+'" autocomplete="off"></label><label class="f" for="em-tpl">Welcome template ID<input id="em-tpl" value="'+attr(em.templateId||"")+'" autocomplete="off"></label></div>'+
+  '<label class="f" for="em-order-tpl">Order notification template ID<input id="em-order-tpl" value="'+attr(em.notificationTemplateId||"")+'" autocomplete="off"></label>'+
+  '<p class="muted" style="font-size:.86rem">Order alerts go to samaryan.p@gmail.com. Your EmailJS order template should use {{to_email}}, {{order_reference}}, {{customer_name}}, {{customer_email}}, {{customer_address}}, {{order_items}}, {{order_total}} and {{payment_status}}.</p>'+
+  '<label class="f" for="em-test">Send a test email to<input id="em-test" type="email" placeholder="you@example.com"></label>'+
+  '<div class="trow"><button class="btn" type="button" data-act="em-save">Save</button><button class="btn ghost" type="button" data-act="em-test">Send test email</button></div>'+
+  '<p class="muted" id="em-msg" role="status" style="font-size:.88rem"></p></div></div>'+
+  '<div class="trow"><button class="btn ghost" data-act="signout" type="button">Sign out</button><button class="btn ghost danger" data-act="reset" type="button">Discard unpublished edits</button></div></section>';
+}
+function simView(){
+ return '<section class="wrap pg"><div class="ph"><span class="eyebrow">Simulate</span><h1>Try a build before you buy it</h1><p>Run the logic from our projects in your browser, or design your own parts list. Move the sliders to change what the sensors see.</p></div>'+
+  '<div class="chips" id="simchips" role="group" aria-label="Simulation">'+SIMS.map(function(s){return '<button type="button" class="chip" data-sim="'+s[0]+'" aria-pressed="'+(s[0]===simName)+'">'+s[1]+"</button>"}).join("")+'</div><div id="simbox"></div></section>';
+}
+
+/* ---------- editing (admin) ---------- */
+var SCHEMA={
+ projects:{label:"project",fields:[["name","Name","text"],["type","Type","select",["Electronics","Robotics"]],["level","Level","select",["Beginner","Intermediate","Advanced"]],["time","Build time (for example 3 h)","text"],["board","Board","text"],["lang","Language","text"],["file","Main file name","text"],["kit","Kit product ID (optional)","text"],["blurb","Short description","textarea"],["videos","Video tutorials (one per line: Title | link)","videos"],["parts","Parts (one per line: product-id x quantity)","parts"],["steps","Steps (one per line: Title | Description)","steps"],["libs","Libraries (one per line)","lines"],["code","Full code","code"]]},
+ products:{label:"product",fields:[["name","Name","text"],["cat","Category","select",CATS.slice(1)],["price","Price in US dollars","number"],["note","Short description","text"]]},
+ software:{label:"software",fields:[["n","Name","text"],["group","Group","select",["Coding","3D printing","BUILD X tools"]],["d","Description","textarea"],["os","Platforms","text"],["v","Label (for example Official site)","text"],["url","Download link","text"]]},
+ codes:{label:"code entry",fields:[["title","Title","text"],["board","Board","text"],["lang","Language","text"],["file","File name","text"],["desc","Description","textarea"],["libs","Libraries (one per line)","lines"],["code","Code","code"]]},
+ founder:{label:"founder profile",single:true,fields:[["name","Name","text"],["role","Role","text"],["bio","About (leave a blank line between paragraphs)","textarea"],["words","Founder's words (a written message shown with the video)","textarea"]]},
+ cofounder:{label:"co-founder profile",single:true,fields:[["name","Name","text"],["role","Role","text"],["bio","About (leave a blank line between paragraphs)","textarea"]]}
+};
+function coll(c){return {projects:PROJECTS,products:PRODUCTS,software:SOFTWARE,codes:CODES}[c]}
+function blank(c){
+ return {projects:{type:"Electronics",level:"Beginner",time:"",board:"",lang:"Arduino C++",file:"",kit:"",blurb:"",videos:[],parts:[],steps:[],libs:[],code:""},
+  products:{cat:"Sensors",price:0,note:""},
+  software:{group:"Coding",d:"",os:"",v:"Official site",url:""},
+  codes:{board:"",lang:"Arduino C++",file:"",desc:"",libs:[],code:""},
+  founder:{}}[c];
+}
+function toForm(kind,v){
+ if(v==null)return "";
+ if(kind==="parts")return v.map(function(p){return p[0]+" x "+p[1]}).join("\n");
+ if(kind==="steps")return v.map(function(s){return s[0]+(s[1]?" | "+s[1]:"")}).join("\n");
+ if(kind==="videos")return v.map(function(x){return (x.t?x.t+" | ":"")+x.u}).join("\n");
+ if(kind==="lines")return v.join("\n");
+ return String(v);
+}
+function fromForm(kind,s){
+ var lines=String(s).split("\n").map(function(l){return l.trim()}).filter(Boolean);
+ if(kind==="parts")return lines.map(function(l){var m=l.match(/^([a-z0-9-]+)\s*(?:x|×|\*)?\s*(\d+)?$/i);return m?[m[1],parseInt(m[2]||"1",10)||1]:null}).filter(Boolean);
+ if(kind==="steps")return lines.map(function(l){var i=l.indexOf("|");return i<0?[l,""]:[l.slice(0,i).trim(),l.slice(i+1).trim()]});
+ if(kind==="videos")return lines.map(function(l){var i=l.lastIndexOf("|");return i<0?{t:"Video tutorial",u:l}:{t:l.slice(0,i).trim(),u:l.slice(i+1).trim()}});
+ if(kind==="lines")return lines;
+ if(kind==="number")return parseFloat(s)||0;
+ return s;
+}
+function fieldHtml(f,val){
+ var k=f[0],kind=f[2],v=toForm(kind,val),id="f-"+k,inner;
+ if(kind==="select"){var opts=f[3].slice();if(v&&opts.indexOf(v)<0)opts.push(v);inner='<select id="'+id+'">'+opts.map(function(o){return "<option"+(o===v?" selected":"")+">"+esc(o)+"</option>"}).join("")+"</select>"}
+ else if(kind==="number")inner='<input id="'+id+'" type="number" step="0.01" min="0" value="'+attr(v)+'">';
+ else if(kind==="text")inner='<input id="'+id+'" type="text" value="'+attr(v)+'">';
+ else inner='<textarea id="'+id+'" rows="'+(kind==="code"?14:kind==="textarea"?4:5)+'"'+(kind==="code"?' class="mono" spellcheck="false"':"")+">"+esc(v)+"</textarea>";
+ return '<label class="f" for="'+id+'">'+esc(f[1])+inner+"</label>";
+}
+var ED=null;
+function openEditor(c,id){
+ var S=SCHEMA[c],item=null;
+ if(S.single)item=(c==="cofounder"?COFOUNDER:FOUNDER);else if(id)item=coll(c).filter(function(i){return i.id===id})[0]||null;
+ ED={c:c,id:item&&!S.single?item.id:null,isNew:!item};
+ if(!item)item=blank(c);
+ $("#m-title").textContent=(ED.isNew?"Add ":"Edit ")+S.label;
+ $("#m-fields").innerHTML=S.fields.map(function(f){return fieldHtml(f,item[f[0]])}).join("");
+ var d=$("#m-del");d.hidden=ED.isNew||!!S.single;d.textContent="Delete";d.dataset.arm="";
+ $("#modal").hidden=false;document.body.style.overflow="hidden";
+ var first=$("#f-"+S.fields[0][0]);if(first)first.focus();
+}
+function closeEditor(){$("#modal").hidden=true;document.body.style.overflow="";ED=null}
+function persist(){LS.set("bl-data",{products:PRODUCTS,projects:PROJECTS,software:SOFTWARE,codes:CODES,founder:FOUNDER,cofounder:COFOUNDER,settings:SETTINGS})}
+function saveEditor(){
+ if(!ED)return;
+ var S=SCHEMA[ED.c],vals={},item;
+ S.fields.forEach(function(f){vals[f[0]]=fromForm(f[2],$("#f-"+f[0]).value)});
+ var nk=S.fields[0][0];
+ if(!String(vals[nk]).trim()){toast("Please fill in: "+S.fields[0][1].toLowerCase());return}
+ if(S.single){var target=ED.c==="cofounder"?COFOUNDER:FOUNDER;Object.keys(vals).forEach(function(k){target[k]=vals[k]})}
+ else{
+  var arr=coll(ED.c);
+  if(ED.isNew){item={id:uniqueId(arr,slug(vals[nk]))};arr.push(item)}
+  else item=arr.filter(function(i){return i.id===ED.id})[0];
+  Object.keys(vals).forEach(function(k){item[k]=vals[k]});
+ }
+ persist();rebuild();closeEditor();render(true);toast("Saved");
+}
+function deleteEditor(){
+ var d=$("#m-del");
+ if(d.dataset.arm!=="1"){d.dataset.arm="1";d.textContent="Click again to delete";return}
+ var arr=coll(ED.c),i=arr.findIndex(function(x){return x.id===ED.id});
+ if(i>-1){var gone=arr.splice(i,1)[0];if(ED.c==="products"){delete cart[gone.id];save();updateCount()}}
+ persist();rebuild();closeEditor();render(true);toast("Deleted");
+}
+
+/* ---------- language ---------- */
+var LANGS=[["en","English"],["hi","हिन्दी (Hindi)"],["bn","বাংলা (Bengali)"],["ta","தமிழ் (Tamil)"],["te","తెలుగు (Telugu)"],["mr","मराठी (Marathi)"],["ur","اردو (Urdu)"],["es","Español (Spanish)"],["fr","Français (French)"],["de","Deutsch (German)"],["pt","Português (Portuguese)"],["it","Italiano (Italian)"],["nl","Nederlands (Dutch)"],["ru","Русский (Russian)"],["tr","Türkçe (Turkish)"],["ar","العربية (Arabic)"],["id","Bahasa Indonesia"],["ms","Bahasa Melayu (Malay)"],["vi","Tiếng Việt (Vietnamese)"],["th","ไทย (Thai)"],["zh-CN","中文 (Chinese, Simplified)"],["ja","日本語 (Japanese)"],["ko","한국어 (Korean)"],["sw","Kiswahili (Swahili)"]];
+function langName(c){var l=LANGS.filter(function(x){return x[0]===c})[0];return l?l[1]:"English"}
+function guessLang(){
+ try{
+  var l=(navigator.language||"en").toLowerCase(),base=l.split("-")[0],m=null;
+  LANGS.forEach(function(x){var k=x[0].toLowerCase();if(!m&&(k===l||k===base||(base==="zh"&&k==="zh-cn")))m=x});
+  return m?m[0]:"en";
+ }catch(e){return "en"}
+}
+function setTransCookie(code){
+ try{
+  var v=code&&code!=="en"?"/en/"+code:"",past="Thu, 01 Jan 1970 00:00:00 GMT";
+  ["",";domain="+location.hostname].forEach(function(d){document.cookie="googtrans="+v+";path=/"+d+(v?"":";expires="+past)});
+ }catch(e){}
+}
+var transLoaded=false;
+function loadTranslate(code){
+ if(!code||code==="en"||transLoaded||!/^https?:$/.test(location.protocol))return;
+ transLoaded=true;
+ window.blTranslateInit=function(){
+  try{new google.translate.TranslateElement({pageLanguage:"en",autoDisplay:false},"google_translate_element")}catch(e){return}
+  var n=0,t=setInterval(function(){
+   var sel=document.querySelector("select.goog-te-combo");
+   if(sel){clearInterval(t);if(sel.value!==code){sel.value=code;sel.dispatchEvent(new Event("change"))}}
+   else if(++n>40)clearInterval(t);
+  },250);
+ };
+ var sc=document.createElement("script");sc.async=true;sc.src="https://translate.google.com/translate_a/element.js?cb=blTranslateInit";document.head.appendChild(sc);
+}
+
+/* ---------- email ---------- */
+function emailReady(){var e=SETTINGS.emailjs||{};return !!(e.publicKey&&e.serviceId&&e.templateId)}
+function sendOrderAlert(params){var e=SETTINGS.emailjs||{};if(!(e.publicKey&&e.serviceId&&e.notificationTemplateId))return Promise.resolve("skipped");return fetch("https://api.emailjs.com/api/v1.0/email/send",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({service_id:e.serviceId,template_id:e.notificationTemplateId,user_id:e.publicKey,template_params:Object.assign({to_email:"samaryan.p@gmail.com",site_name:"BUILD X",site_url:location.href.split("#")[0],payment_status:"Pending - not paid"},params)})}).then(function(r){return r.ok?"sent":"failed"}).catch(function(){return "failed"})}
+async function sendMail(to,extra){
+ var e=SETTINGS.emailjs||{};
+ if(!emailReady())return "skipped";
+ try{
+  var r=await fetch("https://api.emailjs.com/api/v1.0/email/send",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({service_id:e.serviceId,template_id:e.templateId,user_id:e.publicKey,template_params:Object.assign({to_email:to,site_name:"BUILD X",site_url:location.href.split("#")[0]},extra||{})})});
+  return r.ok?"sent":"failed";
+ }catch(err){return "failed"}
+}
+function maybeWelcome(fromGate){
+ if(!profile||!profile.email||profile.welcomed===profile.email||(profile.tries||0)>=3||!emailReady())return;
+ profile.tries=(profile.tries||0)+1;LS.set("bl-profile",profile);
+ sendMail(profile.email,{country:profile.country,language:langName(profile.lang||"en")}).then(function(r){
+  if(r==="sent"){profile.welcomed=profile.email;LS.set("bl-profile",profile);toast("Welcome email sent to "+profile.email)}
+  else if(fromGate)toast("We could not send the welcome email right now.");
+ });
+}
+
+/* ---------- shared content ---------- */
+function loadContent(){
+ if(!/^https?:$/.test(location.protocol)){return}
+ fetch("content.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():null}).then(function(c){
+  if(c&&!(isAdmin&&LS.get("bl-data"))){applyContent(c);rebuild();render(true)}
+  maybeWelcome(false);
+ }).catch(function(){maybeWelcome(false)});
+}
+function say(id,t){var el=document.getElementById(id);if(el)el.textContent=t}
+var pendingVideo=null;
+function pickVideo(f){
+ if(!f)return;
+ var ext=f.type==="video/webm"?"webm":f.type==="video/mp4"?"mp4":"";
+ if(!ext){say("fv-msg","Choose an MP4 or WebM video.");return}
+ if(f.size>20*1024*1024){say("fv-msg","That video is "+(f.size/1048576).toFixed(1)+" MB. The limit is 20 MB. Compress it, or paste a YouTube link instead.");return}
+ if(pendingVideo)URL.revokeObjectURL(pendingVideo.url);
+ pendingVideo={file:f,ext:ext,url:URL.createObjectURL(f)};
+ FOUNDER.video="media/founder."+ext;persist();
+ say("fv-msg","Video ready ("+(f.size/1048576).toFixed(1)+" MB). Open the Founder page to preview it, then click Publish changes so visitors can see it.");
+}
+function b64text(str){var b=new TextEncoder().encode(str),s="",i;for(i=0;i<b.length;i+=0x8000)s+=String.fromCharCode.apply(null,b.subarray(i,i+0x8000));return btoa(s)}
+function b64file(file){return new Promise(function(res,rej){var r=new FileReader();r.onload=function(){res(String(r.result).split(",")[1]||"")};r.onerror=function(){rej(r.error)};r.readAsDataURL(file)})}
+function ghHead(tok){return {Accept:"application/vnd.github+json",Authorization:"Bearer "+tok,"X-GitHub-Api-Version":"2022-11-28"}}
+async function ghPut(g,path,b64,msg){
+ var base="https://api.github.com/repos/"+encodeURIComponent(g.owner)+"/"+encodeURIComponent(g.repo)+"/contents/"+path.split("/").map(encodeURIComponent).join("/");
+ var sha,r=await fetch(base+"?ref="+encodeURIComponent(g.branch),{headers:ghHead(g.token),cache:"no-store"});
+ if(r.ok){sha=(await r.json()).sha}
+ else if(r.status===401||r.status===403)throw new Error("GitHub rejected the token. Check it allows Contents: read and write for this repository.");
+ else if(r.status!==404)throw new Error("GitHub error "+r.status+" while checking "+path+".");
+ var body={message:msg,content:b64,branch:g.branch};if(sha)body.sha=sha;
+ var p=await fetch(base,{method:"PUT",headers:Object.assign({"Content-Type":"application/json"},ghHead(g.token)),body:JSON.stringify(body)});
+ if(!p.ok){var t="";try{t=(await p.json()).message}catch(e){}throw new Error("GitHub error "+p.status+(t?": "+t:"")+(p.status===404?" (check the username, repository and branch)":""))}
+}
+async function publishAll(){
+ var g={owner:$("#gh-owner").value.trim(),repo:$("#gh-repo").value.trim(),branch:$("#gh-branch").value.trim()||"main",token:$("#gh-token").value.trim()};
+ if(!g.owner||!g.repo||!g.token){say("pub-msg","Fill in the username, repository and token first.");return}
+ LS.set("bl-gh",{owner:g.owner,repo:g.repo,branch:g.branch});
+ try{sessionStorage.setItem("bl-ghtok",g.token)}catch(e){}
+ var btn=$("#pub-go");btn.disabled=true;say("pub-msg","Publishing...");
+ try{
+  if(pendingVideo){
+   say("pub-msg","Uploading the video...");
+   await ghPut(g,"media/founder."+pendingVideo.ext,await b64file(pendingVideo.file),"Update founder video");
+   FOUNDER.video="media/founder."+pendingVideo.ext;
+  }
+  say("pub-msg","Saving content...");
+  var json=JSON.stringify({version:1,products:PRODUCTS,projects:PROJECTS,software:SOFTWARE,codes:CODES,founder:FOUNDER,cofounder:COFOUNDER,settings:SETTINGS},null,1);
+  await ghPut(g,"content.json",b64text(json),"Update site content");
+  if(pendingVideo){var keep=pendingVideo.url;pendingVideo=null;FOUNDER.video=FOUNDER.video;try{URL.revokeObjectURL(keep)}catch(e){}}
+  LS.del("bl-data");
+  say("pub-msg","Published. Visitors will see your changes in about a minute.");
+ }catch(err){say("pub-msg",(err&&err.message)?err.message:"Publishing failed. Check your connection and try again.")}
+ var b2=$("#pub-go");if(b2)b2.disabled=false;
+}
+function readEmailFields(){SETTINGS.emailjs={publicKey:$("#em-key").value.trim(),serviceId:$("#em-svc").value.trim(),templateId:$("#em-tpl").value.trim(),notificationTemplateId:$("#em-order-tpl").value.trim()};persist()}
+
+/* ---------- admin sign-in ---------- */
+var ADMIN_HASH="be8709b4501953283bde05348786f57209b252ffc466014e1874bdb0ed45701d";
+function hex(buf){return Array.prototype.map.call(new Uint8Array(buf),function(b){return ("0"+b.toString(16)).slice(-2)}).join("")}
+async function checkLogin(u,p){
+ if(!(window.crypto&&crypto.subtle))throw new Error("nocrypto");
+ var enc=new TextEncoder();
+ var key=await crypto.subtle.importKey("raw",enc.encode(u+"\n"+p),"PBKDF2",false,["deriveBits"]);
+ var bits=await crypto.subtle.deriveBits({name:"PBKDF2",salt:enc.encode("benchloom-v1"),iterations:150000,hash:"SHA-256"},key,256);
+ return hex(bits)===ADMIN_HASH;
+}
+function setAdmin(on){
+ isAdmin=on;
+ try{if(on)sessionStorage.setItem("bl-admin","1");else sessionStorage.removeItem("bl-admin")}catch(e){}
+ updateChrome();
+}
+
+/* ---------- country and email gate ---------- */
+function guessCountry(){
+ try{var l=(navigator.language||"").split("-")[1];if(l){var n=new Intl.DisplayNames(["en"],{type:"region"}).of(l.toUpperCase());if(COUNTRIES.some(function(c){return c[0]===n}))return n}}catch(e){}
+ return "";
+}
+function showGate(){
+ var sel=$("#g-country");
+ if(!sel.options.length){sel.innerHTML='<option value="">Choose your country</option>'+COUNTRIES.map(function(c){return "<option>"+esc(c[0])+"</option>"}).join("")}
+ sel.value=profile?profile.country:guessCountry();
+ var ls=$("#g-lang");
+ if(!ls.options.length)ls.innerHTML=LANGS.map(function(l){return '<option value="'+l[0]+'">'+esc(l[1])+"</option>"}).join("");
+ ls.value=(profile&&profile.lang)||guessLang();
+ $("#g-email").value=profile?profile.email:"";
+ $("#g-err").textContent="";
+ $("#g-cancel").hidden=!profile;
+ $("#gate").hidden=false;document.body.style.overflow="hidden";sel.focus();
+}
+function hideGate(){$("#gate").hidden=true;document.body.style.overflow=""}
+function updateChrome(){
+ var b=$("#curbtn");if(b)b.textContent=curInfo()[1]+" \u00B7 "+((profile&&profile.lang)||"en").toUpperCase();
+ var f=$("#admflag");if(f)f.hidden=!isAdmin;
+}
+
+/* ---------- router ---------- */
+function applyFilter(sec){
+ var act=$('.chip[aria-pressed="true"]',sec),a=act?act.dataset.chip:"All";
+ var s=$(".search",sec),q=s?s.value.toLowerCase().trim():"",shown=0;
+ $$("[data-cat]",sec).forEach(function(el){var ok=(a==="All"||el.dataset.cat===a)&&(!q||el.dataset.name.indexOf(q)>-1);el.hidden=!ok;if(ok)shown++});
+ var n=$("#none",sec);if(n)n.hidden=shown>0;
+}
+function render(keep){
+ simStop();
+ var h=(location.hash||"#home").slice(1),html,key=h;
+ if(h==="home")html=home();
+ else if(h==="founder")html=founderView();
+ else if(h==="cofounder")html=cofounderView();
+ else if(h==="projects")html=projectsView();
+ else if(h.indexOf("p-")===0&&P[h.slice(2)]){html=projectView(P[h.slice(2)]);key="projects"}
+ else if(h==="code")html=codeView();
+ else if(h==="simulate")html=simView();
+ else if(h==="shop")html=shopView();
+ else if(h==="software")html=softwareView();
+ else if(h==="cart")html=cartView();
+ else if(h==="shipping")html=shippingView();
+ else if(h==="admin")html=adminView();
+ else{html=home();key="home"}
+ var y=window.scrollY;
+ $("#view").innerHTML=html;
+ $$("[data-k]").forEach(function(a){if(a.dataset.k===key)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+ if(key==="cart")renderCart();
+ if(key==="simulate")showSim(simName);
+ window.scrollTo(0,keep?y:0);
+}
+function route(){render(false)}
+
+/* ---------- events ---------- */
+document.addEventListener("click",function(e){
+ var t=e.target.closest("[data-add],[data-addall],[data-qty],[data-rm],[data-copy],[data-dl],[data-chip],[data-edit],[data-new],[data-sim],[data-mclose],[data-act],[data-submit]");
+ if(!t)return;
+ var d=t.dataset;
+ if(d.add){add(d.add);toast(X[d.add].name+" added to cart");return}
+ if(d.addall){var p=P[d.addall];partsOf(p).forEach(function(pt){add(pt[0],pt[1])});toast("All parts for "+p.name+" added to cart");return}
+ if(d.qty){var a=d.qty.split(":");cart[a[0]]=Math.max(0,(cart[a[0]]||0)+parseInt(a[1],10));if(!cart[a[0]])delete cart[a[0]];save();updateCount();renderCart();return}
+ if(d.rm){delete cart[d.rm];save();updateCount();renderCart();return}
+ if(d.dl){toast("This download is not available yet.");return}
+ if(d.copy){
+  var en=codeEntries().filter(function(c){return c.id===d.copy})[0];if(!en)return;
+  var fb=function(){var el=$("#code-"+en.id),r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);toast("Code selected. Press copy to finish.")};
+  try{navigator.clipboard.writeText(en.code).then(function(){toast("Code copied")},fb)}catch(err){fb()}
+  return;
+ }
+ if(d.chip){var g=t.closest(".chips");$$(".chip",g).forEach(function(c){c.setAttribute("aria-pressed",c===t?"true":"false")});applyFilter(t.closest(".filterable"));return}
+ if(d.edit){var i=d.edit.indexOf(":");openEditor(d.edit.slice(0,i),d.edit.slice(i+1));return}
+ if(d.new){openEditor(d.new,null);return}
+ if(d.submit){handleForm(d.submit);return}
+ if(d.sim){showSim(d.sim);return}
+ if(d.mclose!==undefined){closeEditor();return}
+ if(d.act==="mdel"){deleteEditor();return}
+ if(d.act==="cur"){showGate();return}
+ if(d.act==="fv-save"){
+  var u=$("#fv-url").value.trim();
+  if(u&&!embedFor(u)){say("fv-msg","Use a YouTube link or a direct link starting with https://");return}
+  if(pendingVideo){try{URL.revokeObjectURL(pendingVideo.url)}catch(e){}pendingVideo=null}
+  FOUNDER.video=u;persist();say("fv-msg",u?"Link saved. Click Publish changes so visitors can see it.":"Video removed.");return;
+ }
+ if(d.act==="fv-clear"){
+  if(pendingVideo){try{URL.revokeObjectURL(pendingVideo.url)}catch(e){}pendingVideo=null}
+  FOUNDER.video="";persist();var fu=$("#fv-url");if(fu)fu.value="";var ff=$("#fv-file");if(ff)ff.value="";say("fv-msg","Video removed. Click Publish changes to remove it for visitors.");return;
+ }
+ if(d.act==="publish"){publishAll();return}
+ if(d.act==="em-save"){readEmailFields();say("em-msg","Saved. Click Publish changes so visitors get the welcome email.");return}
+ if(d.act==="em-test"){
+  readEmailFields();var to=$("#em-test").value.trim();
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(to)){say("em-msg","Enter an email address to send the test to.");return}
+  if(!emailReady()){say("em-msg","Fill in the public key, service ID and template ID first.");return}
+  say("em-msg","Sending...");
+  sendMail(to,{country:"Test",language:"English"}).then(function(r){say("em-msg",r==="sent"?"Test email sent to "+to+". Check the inbox and spam folder.":"The email could not be sent. Check the three values and that your EmailJS service is connected.")});
+  return;
+ }
+ if(d.act==="gcancel"){hideGate();return}
+ if(d.act==="signout"){setAdmin(false);if(location.hash==="#admin")render(false);else location.hash="#admin";return}
+ if(d.act==="reset"){
+  if(t.dataset.arm!=="1"){t.dataset.arm="1";t.textContent="Click again to erase all edits";return}
+  LS.del("bl-data");location.reload();return;
+ }
+});
+document.addEventListener("input",function(e){if(e.target.classList&&e.target.classList.contains("search"))applyFilter(e.target.closest(".filterable"))});
+document.addEventListener("change",function(e){
+ if(e.target.name==="ship"){shipSel=e.target.value;renderCart();return}
+ if(e.target.id==="fv-file")pickVideo(e.target.files&&e.target.files[0]);
+});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&ED)closeEditor()});
+function handleForm(f){
+ if(f==="checkout"){
+  var name=$("#c-name").value.trim(),email=$("#c-email").value.trim(),address=$("#c-addr").value.trim(),msg=$("#chk-msg"),btn=$("[data-submit=checkout]");
+  if(!name||!address||!(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email))){msg.textContent="Enter your name, a valid email and delivery address first.";return}
+  var em=SETTINGS.emailjs||{};if(!(em.publicKey&&em.serviceId&&em.notificationTemplateId)){msg.textContent="Order alert is not configured yet. Ask the site admin to add the EmailJS order notification template ID.";return}
+  var orderId="BX-"+Date.now().toString(36).toUpperCase(),items=cartIds().map(function(id){return X[id].name+" x "+cart[id]+" — "+money(X[id].price*cart[id])}).join("\n"),sub=subtotal(),ship=(shipSel==="standard"&&sub>=FREE_SHIP)?0:SHIP[shipSel].p,total=sub+ship;
+  btn.disabled=true;msg.textContent="Sending a pending-purchase notification to the BUILD X admin...";
+  sendOrderAlert({order_reference:orderId,customer_name:name,customer_email:email,customer_address:address,order_items:items,subtotal:money(sub),shipping:ship===0?"Free":money(ship),order_total:money(total),currency:curInfo()[1],payment_status:"Pending - customer has not paid"}).then(function(r){btn.disabled=false;if(r==="sent"){msg.textContent="Your purchase request has been sent to BUILD X. Payment is not connected yet, so no payment has been taken and this is not a confirmed order."}else{msg.textContent="We could not send the purchase notification. Please try again later."}});
+ }
+ if(f==="gateform"){
+  var c=$("#g-country").value,em=$("#g-email").value.trim();
+  if(!c){$("#g-err").textContent="Choose your country.";return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){$("#g-err").textContent="Enter a valid email address.";return}
+  var lg=$("#g-lang").value||"en",prev=profile,changed=!prev||prev.email!==em,langChanged=((prev&&prev.lang)||"en")!==lg;
+  profile={country:c,lang:lg,email:em,welcomed:changed?"":((prev&&prev.welcomed)||""),tries:changed?0:((prev&&prev.tries)||0)};
+  LS.set("bl-profile",profile);
+  hideGate();updateChrome();
+  var stored=LS.get("bl-profile");
+  if(langChanged&&stored&&stored.lang===lg){setTransCookie(lg);location.reload();return}
+  if(langChanged){setTransCookie(lg);loadTranslate(lg)}
+  render(true);toast("Prices are now shown in "+curInfo()[1]);
+  maybeWelcome(true);
+ }
+ if(f==="mform")saveEditor();
+ if(f==="adminlogin"){
+  var u=$("#a-user").value.trim(),pw=$("#a-pass").value,btn=$("#a-go"),er=$("#a-err");
+  btn.disabled=true;er.textContent="";
+  checkLogin(u,pw).then(function(ok){
+   if(ok){var localDraft=LS.get("bl-data");if(localDraft)applyContent(localDraft);setAdmin(true);rebuild();render(false);toast("Signed in. Your saved browser edits have been restored.")}
+   else{er.textContent="Wrong username or password.";btn.disabled=false}
+  },function(){er.textContent="Sign-in needs a secure (https) page.";btn.disabled=false});
+ }
+}
+document.addEventListener("submit",function(e){e.preventDefault();if(e.target.id)handleForm(e.target.id)});
+document.addEventListener("keydown",function(e){
+ if(e.key!=="Enter"||e.isComposing)return;
+ var t=e.target;if(!t||t.tagName!=="INPUT"||t.type==="checkbox"||t.type==="radio"||t.type==="range"||t.type==="number"&&false)return;
+ var f=t.closest("form");if(!f||!f.id)return;
+ e.preventDefault();handleForm(f.id);
+});
+window.addEventListener("hashchange",route);
+updateCount();updateChrome();route();
+if(!profile)showGate();
+if(profile&&profile.lang&&profile.lang!=="en"){setTransCookie(profile.lang);loadTranslate(profile.lang)}
+loadContent();
+})();
+</script>
+</body>
+</html>
